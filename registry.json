@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "updated_at": "2026-03-18T23:41:31.634Z",
+  "total": 5,
+  "skills": [
+    {
+      "name": "example-commit",
+      "display_name": "Example: Smart Commit",
+      "description": "示例 skill — 根据 staged changes 自动生成规范的 commit message。这是一个占位示例，展示 info.json 的字段结构。",
+      "author": {
+        "name": "aiwatching",
+        "url": "https://github.com/aiwatching"
+      },
+      "source": {
+        "repo": "aiwatching/forge-skills",
+        "path": "skills/example-commit/skill.md",
+        "url": "https://github.com/aiwatching/forge-skills/blob/main/skills/example-commit/skill.md"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "git",
+        "workflow",
+        "example"
+      ],
+      "license": "Apache-2.0",
+      "score": 35,
+      "dir": "example-commit"
+    },
+    {
+      "name": "explain",
+      "display_name": "Explain Code",
+      "description": "解释指定文件或函数的代码逻辑，用简洁的语言描述它做了什么、为什么这样做",
+      "author": {
+        "name": "aiwatching",
+        "url": "https://github.com/aiwatching"
+      },
+      "source": {
+        "repo": "aiwatching/forge-skills",
+        "path": "skills/explain/skill.md",
+        "url": "https://github.com/aiwatching/forge-skills/blob/main/skills/explain/skill.md"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "learning",
+        "documentation"
+      ],
+      "license": "Apache-2.0",
+      "score": 35,
+      "dir": "explain"
+    },
+    {
+      "name": "refactor",
+      "display_name": "Refactor",
+      "description": "分析指定代码并提出重构建议，减少重复、提高可读性和可维护性",
+      "author": {
+        "name": "aiwatching",
+        "url": "https://github.com/aiwatching"
+      },
+      "source": {
+        "repo": "aiwatching/forge-skills",
+        "path": "skills/refactor/skill.md",
+        "url": "https://github.com/aiwatching/forge-skills/blob/main/skills/refactor/skill.md"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "refactoring",
+        "code-quality"
+      ],
+      "license": "Apache-2.0",
+      "score": 35,
+      "dir": "refactor"
+    },
+    {
+      "name": "review-code",
+      "display_name": "Code Review",
+      "description": "对当前 git diff 进行代码审查，检查 bug、安全问题、性能问题和代码风格",
+      "author": {
+        "name": "aiwatching",
+        "url": "https://github.com/aiwatching"
+      },
+      "source": {
+        "repo": "aiwatching/forge-skills",
+        "path": "skills/review-code/skill.md",
+        "url": "https://github.com/aiwatching/forge-skills/blob/main/skills/review-code/skill.md"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "git",
+        "code-review",
+        "quality"
+      ],
+      "license": "Apache-2.0",
+      "score": 35,
+      "dir": "review-code"
+    },
+    {
+      "name": "test-gen",
+      "display_name": "Generate Tests",
+      "description": "为指定函数或模块生成单元测试，覆盖正常路径、边界情况和错误处理",
+      "author": {
+        "name": "aiwatching",
+        "url": "https://github.com/aiwatching"
+      },
+      "source": {
+        "repo": "aiwatching/forge-skills",
+        "path": "skills/test-gen/skill.md",
+        "url": "https://github.com/aiwatching/forge-skills/blob/main/skills/test-gen/skill.md"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "testing",
+        "quality"
+      ],
+      "license": "Apache-2.0",
+      "score": 35,
+      "dir": "test-gen"
+    }
+  ]
+}

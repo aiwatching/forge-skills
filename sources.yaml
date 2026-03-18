@@ -1,0 +1,11 @@
+# 爬取源配置
+# collector 会从这些源收集 skill 文件
+
+# GitHub 搜索 — 搜索包含 .claude/commands/*.md 的仓库
+github_search:
+  - query: "path:.claude/commands extension:md"
+    min_stars: 5
+
+# 指定仓库 — 直接从已知仓库拉取
+repos:
+  # - owner/repo

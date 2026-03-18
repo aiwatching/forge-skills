@@ -1,0 +1,21 @@
+{
+  "name": "refactor",
+  "display_name": "Refactor",
+  "description": "分析指定代码并提出重构建议，减少重复、提高可读性和可维护性",
+  "author": {
+    "name": "aiwatching",
+    "url": "https://github.com/aiwatching"
+  },
+  "source": {
+    "repo": "aiwatching/forge-skills",
+    "path": "skills/refactor/skill.md",
+    "url": "https://github.com/aiwatching/forge-skills/blob/main/skills/refactor/skill.md"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "refactoring",
+    "code-quality"
+  ],
+  "license": "Apache-2.0",
+  "score": 35
+}
