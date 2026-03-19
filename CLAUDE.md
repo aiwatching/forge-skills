@@ -6,18 +6,22 @@ Skills marketplace for [Forge](https://github.com/aiwatching/forge) — collecti
 ```
 forge-skills/
 ├── registry.json              # Forge 消费的入口（自动生成，勿手动编辑）
-├── skills/                    # 收集到的 skill .md 文件
+├── skills/                    # 已发布的 skill（info.json + skill.md）
+├── staging.json               # 待审核的 skill（爬取或手动添加）
+├── sources.json               # 爬取源 repo 列表
+├── admin.mjs                  # 管理页面服务
 ├── collector/                 # 爬虫 + 评分 + registry 生成
-│   ├── crawl.mjs              # GitHub 爬取 .claude/commands/*.md
+│   ├── crawl.mjs              # GitHub 爬取 → staging.json
 │   ├── score.mjs              # 评分逻辑
 │   └── build-registry.mjs     # 汇总生成 registry.json
-├── .github/workflows/
-│   └── sync.yaml              # 定时跑 collector
-└── sources.yaml               # 爬取源配置
+└── .github/workflows/
+    └── sync.yaml              # 定时跑 collector
 ```
 
 ### Scripts
 ```bash
+node admin.mjs                     # 管理页面 http://localhost:3100
+node admin.mjs --port 3200         # 自定义端口
 node collector/crawl.mjs           # 爬取 skills
 node collector/score.mjs           # 计算评分
 node collector/build-registry.mjs  # 生成 registry.json
