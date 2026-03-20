@@ -1,8 +1,30 @@
 {
   "version": 2,
-  "updated_at": "2026-03-20T05:57:41.836Z",
-  "total": 5,
-  "skills": [],
+  "updated_at": "2026-03-20T20:23:19.760Z",
+  "total": 6,
+  "skills": [
+    {
+      "name": "audit-env-variables",
+      "type": "skill",
+      "display_name": "Audit Env Variables",
+      "description": "name: audit-env-variables",
+      "author": {
+        "name": "qdhenry",
+        "url": "https://github.com/qdhenry"
+      },
+      "source": {
+        "repo": "qdhenry/Claude-Command-Suite",
+        "url": "https://github.com/qdhenry/Claude-Command-Suite/tree/main/.claude/skills/audit-env-variables"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "claude-command-suite",
+        "skill"
+      ],
+      "license": "",
+      "score": 45
+    }
+  ],
   "commands": [
     {
       "name": "example-commit",
