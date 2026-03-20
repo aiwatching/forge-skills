@@ -1,0 +1,18 @@
+{
+  "name": "clean",
+  "type": "skill",
+  "display_name": "Clean",
+  "description": "",
+  "author": {
+    "name": "alirezarezvani",
+    "url": "https://github.com/alirezarezvani"
+  },
+  "source": {
+    "repo": "alirezarezvani/claude-skills",
+    "url": "https://github.com/alirezarezvani/claude-skills/blob/main/.claude/commands/git/clean.md"
+  },
+  "version": "0.1.0",
+  "tags": [],
+  "license": "MIT",
+  "score": 35
+}

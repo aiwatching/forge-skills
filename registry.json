@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-03-20T21:42:19.139Z",
-  "total": 9,
+  "updated_at": "2026-03-20T21:42:45.278Z",
+  "total": 10,
   "skills": [
     {
       "name": "cloudflare-manager",
@@ -44,6 +44,24 @@
       ],
       "license": "",
       "score": 45
+    },
+    {
+      "name": "clean",
+      "type": "skill",
+      "display_name": "Clean",
+      "description": "",
+      "author": {
+        "name": "alirezarezvani",
+        "url": "https://github.com/alirezarezvani"
+      },
+      "source": {
+        "repo": "alirezarezvani/claude-skills",
+        "url": "https://github.com/alirezarezvani/claude-skills/blob/main/.claude/commands/git/clean.md"
+      },
+      "version": "0.1.0",
+      "tags": [],
+      "license": "MIT",
+      "score": 35
     },
     {
       "name": "browse",
