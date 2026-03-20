@@ -24,3 +24,10 @@ Forge 通过 raw GitHub URL 拉取 `registry.json`，按需下载 skills/command
 
 ### Management
 内容由 [forge-skills-manager](https://github.com/aiwatching/forge-skills-manager) 管理和发布。
+
+<!-- forge:template:obsidian-vault -->
+## Obsidian Vault
+Location: /Users/zliu/MyDocuments/obsidian-project/Projects
+When I ask about my notes, use bash to search and read files from the vault directory.
+Example: find <vault_path> -name "*.md" | head -20
+<!-- /forge:template:obsidian-vault -->
