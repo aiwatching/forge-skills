@@ -1,5 +1,6 @@
 {
   "name": "review-code",
+  "type": "command",
   "display_name": "Code Review",
   "description": "对当前 git diff 进行代码审查，检查 bug、安全问题、性能问题和代码风格",
   "author": {
@@ -8,8 +9,7 @@
   },
   "source": {
     "repo": "aiwatching/forge-skills",
-    "path": "skills/review-code/skill.md",
-    "url": "https://github.com/aiwatching/forge-skills/blob/main/skills/review-code/skill.md"
+    "url": "https://github.com/aiwatching/forge-skills"
   },
   "version": "0.1.0",
   "tags": [

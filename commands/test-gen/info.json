@@ -1,5 +1,6 @@
 {
   "name": "test-gen",
+  "type": "command",
   "display_name": "Generate Tests",
   "description": "为指定函数或模块生成单元测试，覆盖正常路径、边界情况和错误处理",
   "author": {
@@ -8,8 +9,7 @@
   },
   "source": {
     "repo": "aiwatching/forge-skills",
-    "path": "skills/test-gen/skill.md",
-    "url": "https://github.com/aiwatching/forge-skills/blob/main/skills/test-gen/skill.md"
+    "url": "https://github.com/aiwatching/forge-skills"
   },
   "version": "0.1.0",
   "tags": [

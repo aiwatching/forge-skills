@@ -1,6 +1,8 @@
 #!/usr/bin/env node
-// GitHub crawler — searches for .claude/commands/*.md files
-// Writes results to staging.json for review, NOT directly into skills/
+// GitHub crawler — downloads all command/skill files from repos
+// Groups all files per repo into one staging entry
+// Usage: node crawl.mjs              (all repos from sources.json)
+//        node crawl.mjs --repo owner/repo  (single repo)
 
 import { readFileSync, writeFileSync, existsSync, readdirSync, statSync } from "fs";
 import { join, dirname, basename } from "path";
@@ -52,56 +54,12 @@ async function fetchRepoMeta(owner, repo) {
   }
 }
 
-async function searchSkillFiles(query, minStars) {
-  const results = [];
-  let page = 1;
-  const perPage = 100;
-
-  while (true) {
-    const q = encodeURIComponent(query);
-    const data = await ghFetch(
-      `https://api.github.com/search/code?q=${q}&per_page=${perPage}&page=${page}`
-    );
-    for (const item of data.items || []) {
-      if (!item.path.startsWith(".claude/commands/") || !item.path.endsWith(".md")) continue;
-      results.push({
-        owner: item.repository.owner.login,
-        repo: item.repository.name,
-        path: item.path,
-        filename: basename(item.path, ".md"),
-      });
-    }
-    if (!data.items || data.items.length < perPage || page >= 10) break;
-    page++;
-    await new Promise((r) => setTimeout(r, 2000));
-  }
-
-  if (minStars > 0) {
-    const cache = {};
-    const filtered = [];
-    for (const item of results) {
-      const key = `${item.owner}/${item.repo}`;
-      if (!(key in cache)) cache[key] = await fetchRepoMeta(item.owner, item.repo);
-      if (cache[key]?.stargazers_count >= minStars) {
-        filtered.push({ ...item, stars: cache[key].stargazers_count });
-      }
-    }
-    return filtered;
-  }
-  return results;
-}
-
-// Try multiple known paths where skill .md files might live
-const SKILL_PATHS = [
-  ".claude/commands",
-  "commands",
-  "skills",
-];
-
+// Known directories where skill/command files live (priority order)
+const SKILL_PATHS = [".claude/skills", ".claude/commands", "skills", "commands"];
 const SKIP_FILES = new Set(["README.md", "CHANGELOG.md", "LICENSE.md", "CONTRIBUTING.md", "CODE_OF_CONDUCT.md"]);
 
-// Recursively list all .md files under a directory
-async function listMdFiles(owner, repo, dir) {
+// Recursively list all files under a directory
+async function listAllFiles(owner, repo, dir) {
   const results = [];
   try {
     const items = await ghFetch(
@@ -109,11 +67,12 @@ async function listMdFiles(owner, repo, dir) {
     );
     if (!Array.isArray(items)) return results;
     for (const f of items) {
-      if (f.type === "file" && f.name.endsWith(".md") && !SKIP_FILES.has(f.name)) {
-        results.push({ owner, repo, path: f.path, filename: basename(f.name, ".md") });
+      if (f.type === "file" && !SKIP_FILES.has(f.name)) {
+        // Relative path within the skill directory
+        const relPath = f.path.startsWith(dir + "/") ? f.path.slice(dir.length + 1) : f.name;
+        results.push({ path: f.path, relPath, name: f.name });
       } else if (f.type === "dir") {
-        // Recurse into subdirectories
-        const sub = await listMdFiles(owner, repo, f.path);
+        const sub = await listAllFiles(owner, repo, f.path);
         results.push(...sub);
         await new Promise((r) => setTimeout(r, 100));
       }
@@ -124,48 +83,36 @@ async function listMdFiles(owner, repo, dir) {
   return results;
 }
 
+// Find the skill directory in a repo and list all files
 async function crawlRepo(ownerRepo) {
   const [owner, repo] = ownerRepo.split("/");
-  let results = [];
 
+  // Try known paths
   for (const dir of SKILL_PATHS) {
-    results = await listMdFiles(owner, repo, dir);
-    if (results.length > 0) break;
-  }
-
-  // Fallback: scan root (non-recursive, only top-level .md)
-  if (results.length === 0) {
-    try {
-      const items = await ghFetch(
-        `https://api.github.com/repos/${owner}/${repo}/contents/`
-      );
-      if (Array.isArray(items)) {
-        for (const f of items) {
-          if (f.type === "file" && f.name.endsWith(".md") && !SKIP_FILES.has(f.name)) {
-            results.push({ owner, repo, path: f.path, filename: basename(f.name, ".md") });
-          }
-        }
-      }
-    } catch (e) {
-      console.warn(`crawl: skip ${ownerRepo} — ${e.message}`);
+    const files = await listAllFiles(owner, repo, dir);
+    if (files.length > 0) {
+      return { dir, files };
     }
   }
 
-  return results;
+  // Fallback: root-level .md files (not recursive)
+  try {
+    const items = await ghFetch(
+      `https://api.github.com/repos/${owner}/${repo}/contents/`
+    );
+    if (Array.isArray(items)) {
+      const files = items
+        .filter((f) => f.type === "file" && f.name.endsWith(".md") && !SKIP_FILES.has(f.name))
+        .map((f) => ({ path: f.path, relPath: f.name, name: f.name }));
+      if (files.length > 0) return { dir: "", files };
+    }
+  } catch (e) {
+    console.warn(`crawl: skip ${ownerRepo} — ${e.message}`);
+  }
+
+  return { dir: "", files: [] };
 }
 
-function dedup(items) {
-  const seen = new Set();
-  return items.filter((item) => {
-    const key = `${item.owner}/${item.repo}/${item.filename}`;
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
-}
-
-// Support: node crawl.mjs              (all repos from sources.json)
-//         node crawl.mjs --repo owner/repo  (single repo)
 async function main() {
   const singleRepo = process.argv.find((_, i, a) => a[i - 1] === "--repo");
 
@@ -186,78 +133,85 @@ async function main() {
     return;
   }
 
-  // Load existing staging to preserve status
+  // Load existing staging
   const existingStaging = existsSync(STAGING_PATH)
     ? JSON.parse(readFileSync(STAGING_PATH, "utf8"))
     : [];
-  const existingKeys = new Set(existingStaging.map((s) => s.id));
+  const existingIds = new Set(existingStaging.map((s) => s.id));
 
-  // Also collect published skill names for dedup
+  // Also check published skills
   if (existsSync(SKILLS_DIR)) {
     for (const d of readdirSync(SKILLS_DIR)) {
       if (!statSync(join(SKILLS_DIR, d)).isDirectory()) continue;
-      const infoPath = join(SKILLS_DIR, d, "info.json");
-      if (!existsSync(infoPath)) continue;
-      try {
-        const info = JSON.parse(readFileSync(infoPath, "utf8"));
-        if (info.source?.repo && info.name) {
-          existingKeys.add(`${info.source.repo}/${info.name}`);
-        }
-      } catch {}
+      existingIds.add(d); // skill dir name as id
     }
   }
-  console.log(`crawl: ${existingKeys.size} existing items (staging + published)`);
 
-  let allItems = [];
-
-  for (const ownerRepo of reposToCrawl) {
-    console.log(`crawl: crawling ${ownerRepo}`);
-    const items = await crawlRepo(ownerRepo);
-    console.log(`crawl: found ${items.length} files in ${ownerRepo}`);
-    allItems.push(...items);
-  }
-
-  allItems = dedup(allItems);
-  console.log(`crawl: ${allItems.length} unique skills after dedup`);
-
-  const repoCache = {};
   let added = 0;
 
-  for (const item of allItems) {
-    const id = `${item.owner}/${item.repo}/${item.filename}`;
-    if (existingKeys.has(id)) continue; // already in staging
-
-    const repoKey = `${item.owner}/${item.repo}`;
-    if (!(repoKey in repoCache)) {
-      repoCache[repoKey] = await fetchRepoMeta(item.owner, item.repo);
-    }
-    const repoMeta = repoCache[repoKey];
-
-    const content = await fetchRawContent(item.owner, item.repo, item.path);
-    if (!content) {
-      console.warn(`crawl: skip ${id} — fetch failed`);
+  for (const ownerRepo of reposToCrawl) {
+    const id = ownerRepo; // one staging entry per repo
+    if (existingIds.has(id)) {
+      console.log(`crawl: skip ${ownerRepo} — already in staging or published`);
       continue;
     }
 
+    console.log(`crawl: crawling ${ownerRepo}`);
+    const { dir: skillDir, files: fileList } = await crawlRepo(ownerRepo);
+
+    if (!fileList.length) {
+      console.log(`crawl: no files found in ${ownerRepo}`);
+      continue;
+    }
+
+    console.log(`crawl: found ${fileList.length} files in ${ownerRepo}/${skillDir}`);
+
+    // Fetch repo metadata
+    const [owner, repo] = ownerRepo.split("/");
+    const repoMeta = await fetchRepoMeta(owner, repo);
+
+    // Download all file contents
+    const files = [];
+    for (const f of fileList) {
+      const content = await fetchRawContent(owner, repo, f.path);
+      if (content !== null) {
+        files.push({
+          name: f.name,
+          relPath: f.relPath,
+          sourcePath: f.path,
+          github_url: `https://github.com/${ownerRepo}/blob/main/${f.path}`,
+          content,
+        });
+      }
+      await new Promise((r) => setTimeout(r, 100));
+    }
+
+    if (!files.length) {
+      console.warn(`crawl: skip ${ownerRepo} — all downloads failed`);
+      continue;
+    }
+
+    // Derive a clean name from repo
+    const displayName = repo.replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+
     existingStaging.push({
       id,
-      name: item.filename,
-      display_name: item.filename.replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
-      description: "",
-      author: item.owner,
-      source_repo: repoKey,
-      source_path: item.path,
-      github_url: `https://github.com/${repoKey}/blob/main/${item.path}`,
-      repo_url: `https://github.com/${repoKey}`,
+      name: repo,
+      display_name: displayName,
+      description: repoMeta?.description || "",
+      author: owner,
+      source_repo: ownerRepo,
+      source_dir: skillDir,
+      github_url: `https://github.com/${ownerRepo}`,
+      repo_url: `https://github.com/${ownerRepo}`,
       repo_stars: repoMeta?.stargazers_count || 0,
-      repo_description: repoMeta?.description || "",
       license: repoMeta?.license?.spdx_id || "",
-      content,
+      files,
+      file_count: files.length,
       crawled_at: new Date().toISOString(),
       status: "pending",
     });
     added++;
-    await new Promise((r) => setTimeout(r, 200));
   }
 
   writeFileSync(STAGING_PATH, JSON.stringify(existingStaging, null, 2) + "\n");

@@ -1,5 +1,6 @@
 {
   "name": "explain",
+  "type": "command",
   "display_name": "Explain Code",
   "description": "解释指定文件或函数的代码逻辑，用简洁的语言描述它做了什么、为什么这样做",
   "author": {
@@ -8,8 +9,7 @@
   },
   "source": {
     "repo": "aiwatching/forge-skills",
-    "path": "skills/explain/skill.md",
-    "url": "https://github.com/aiwatching/forge-skills/blob/main/skills/explain/skill.md"
+    "url": "https://github.com/aiwatching/forge-skills"
   },
   "version": "0.1.0",
   "tags": [

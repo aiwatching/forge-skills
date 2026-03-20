@@ -2,4 +2,6 @@ node_modules/
 .DS_Store
 staging.json
 sources.json
+logs.json
 .env
+collector/adapters/

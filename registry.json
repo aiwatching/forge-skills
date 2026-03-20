@@ -1,20 +1,21 @@
 {
-  "version": 1,
-  "updated_at": "2026-03-19T06:52:45.438Z",
+  "version": 2,
+  "updated_at": "2026-03-20T05:57:41.836Z",
   "total": 5,
-  "skills": [
+  "skills": [],
+  "commands": [
     {
       "name": "example-commit",
+      "type": "command",
       "display_name": "Example: Smart Commit",
-      "description": "示例 skill — 根据 staged changes 自动生成规范的 commit message。这是一个占位示例，展示 info.json 的字段结构。",
+      "description": "示例 command — 根据 staged changes 自动生成规范的 commit message。这是一个占位示例，展示 info.json 的字段结构。",
       "author": {
         "name": "aiwatching",
         "url": "https://github.com/aiwatching"
       },
       "source": {
         "repo": "aiwatching/forge-skills",
-        "path": "skills/example-commit/skill.md",
-        "url": "https://github.com/aiwatching/forge-skills/blob/main/skills/example-commit/skill.md"
+        "url": "https://github.com/aiwatching/forge-skills"
       },
       "version": "0.1.0",
       "tags": [
@@ -23,11 +24,11 @@
         "example"
       ],
       "license": "Apache-2.0",
-      "score": 35,
-      "dir": "example-commit"
+      "score": 35
     },
     {
       "name": "explain",
+      "type": "command",
       "display_name": "Explain Code",
       "description": "解释指定文件或函数的代码逻辑，用简洁的语言描述它做了什么、为什么这样做",
       "author": {
@@ -36,8 +37,7 @@
       },
       "source": {
         "repo": "aiwatching/forge-skills",
-        "path": "skills/explain/skill.md",
-        "url": "https://github.com/aiwatching/forge-skills/blob/main/skills/explain/skill.md"
+        "url": "https://github.com/aiwatching/forge-skills"
       },
       "version": "0.1.0",
       "tags": [
@@ -45,11 +45,11 @@
         "documentation"
       ],
       "license": "Apache-2.0",
-      "score": 35,
-      "dir": "explain"
+      "score": 35
     },
     {
       "name": "refactor",
+      "type": "command",
       "display_name": "Refactor",
       "description": "分析指定代码并提出重构建议，减少重复、提高可读性和可维护性",
       "author": {
@@ -58,8 +58,7 @@
       },
       "source": {
         "repo": "aiwatching/forge-skills",
-        "path": "skills/refactor/skill.md",
-        "url": "https://github.com/aiwatching/forge-skills/blob/main/skills/refactor/skill.md"
+        "url": "https://github.com/aiwatching/forge-skills"
       },
       "version": "0.1.0",
       "tags": [
@@ -67,11 +66,11 @@
         "code-quality"
       ],
       "license": "Apache-2.0",
-      "score": 35,
-      "dir": "refactor"
+      "score": 35
     },
     {
       "name": "review-code",
+      "type": "command",
       "display_name": "Code Review",
       "description": "对当前 git diff 进行代码审查，检查 bug、安全问题、性能问题和代码风格",
       "author": {
@@ -80,8 +79,7 @@
       },
       "source": {
         "repo": "aiwatching/forge-skills",
-        "path": "skills/review-code/skill.md",
-        "url": "https://github.com/aiwatching/forge-skills/blob/main/skills/review-code/skill.md"
+        "url": "https://github.com/aiwatching/forge-skills"
       },
       "version": "0.1.0",
       "tags": [
@@ -90,11 +88,11 @@
         "quality"
       ],
       "license": "Apache-2.0",
-      "score": 35,
-      "dir": "review-code"
+      "score": 35
     },
     {
       "name": "test-gen",
+      "type": "command",
       "display_name": "Generate Tests",
       "description": "为指定函数或模块生成单元测试，覆盖正常路径、边界情况和错误处理",
       "author": {
@@ -103,8 +101,7 @@
       },
       "source": {
         "repo": "aiwatching/forge-skills",
-        "path": "skills/test-gen/skill.md",
-        "url": "https://github.com/aiwatching/forge-skills/blob/main/skills/test-gen/skill.md"
+        "url": "https://github.com/aiwatching/forge-skills"
       },
       "version": "0.1.0",
       "tags": [
@@ -112,8 +109,7 @@
         "quality"
       ],
       "license": "Apache-2.0",
-      "score": 35,
-      "dir": "test-gen"
+      "score": 35
     }
   ]
 }
