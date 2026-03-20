@@ -1,8 +1,29 @@
 {
   "version": 2,
-  "updated_at": "2026-03-20T20:23:19.760Z",
-  "total": 6,
+  "updated_at": "2026-03-20T20:26:25.188Z",
+  "total": 7,
   "skills": [
+    {
+      "name": "cloudflare-manager",
+      "type": "skill",
+      "display_name": "Cloudflare Manager",
+      "description": "name: Cloudflare Manager",
+      "author": {
+        "name": "qdhenry",
+        "url": "https://github.com/qdhenry"
+      },
+      "source": {
+        "repo": "qdhenry/Claude-Command-Suite",
+        "url": "https://github.com/qdhenry/Claude-Command-Suite/tree/main/.claude/skills/cloudflare-manager"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "claude-command-suite",
+        "skill"
+      ],
+      "license": "",
+      "score": 115
+    },
     {
       "name": "audit-env-variables",
       "type": "skill",
