@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-03-20T21:43:47.305Z",
-  "total": 11,
+  "updated_at": "2026-03-20T21:44:24.594Z",
+  "total": 12,
   "skills": [
     {
       "name": "cloudflare-manager",
@@ -101,6 +101,27 @@
       "tags": [
         "gstack",
         "browse"
+      ],
+      "license": "",
+      "score": 10
+    },
+    {
+      "name": "careful",
+      "type": "skill",
+      "display_name": "careful",
+      "description": "| Safety guardrails for destructive commands. Warns before rm -rf, DROP TABLE, force-push, git reset --hard, kubectl delete, and similar destructive operations. User can override each warning. Use when touching prod, debugging live systems, or working in a shared environment. Use when asked to \"be careful\", \"safety mode\", \"prod mode\", or \"careful mode\".",
+      "author": {
+        "name": "garrytan",
+        "url": "https://github.com/garrytan"
+      },
+      "source": {
+        "repo": "garrytan/gstack",
+        "url": "https://github.com/garrytan/gstack/tree/main/careful"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "gstack",
+        "careful"
       ],
       "license": "",
       "score": 10
