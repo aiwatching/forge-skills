@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-03-20T21:57:12.948Z",
-  "total": 13,
+  "updated_at": "2026-03-20T22:08:40.960Z",
+  "total": 14,
   "skills": [
     {
       "name": "cloudflare-manager",
@@ -125,6 +125,27 @@
       "tags": [
         "gstack",
         "qa"
+      ],
+      "license": "",
+      "score": 45
+    },
+    {
+      "name": "setup-browser-cookies",
+      "type": "skill",
+      "display_name": "setup-browser-cookies",
+      "description": "| Import cookies from your real browser (Comet, Chrome, Arc, Brave, Edge) into the headless browse session. Opens an interactive picker UI where you select which cookie domains to import. Use before QA testing authenticated pages. Use when asked to \"import cookies\", \"login to the site\", or \"authenticate the browser\".",
+      "author": {
+        "name": "garrytan",
+        "url": "https://github.com/garrytan"
+      },
+      "source": {
+        "repo": "garrytan/gstack",
+        "url": "https://github.com/garrytan/gstack/tree/main/setup-browser-cookies"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "gstack",
+        "setup-browser-cookies"
       ],
       "license": "",
       "score": 45
