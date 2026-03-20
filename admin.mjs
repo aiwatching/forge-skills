@@ -37,10 +37,11 @@ const LOGS_PATH = join(__dirname, "logs.json");
 function readLogs() {
   return existsSync(LOGS_PATH) ? JSON.parse(readFileSync(LOGS_PATH, "utf8")) : [];
 }
-function appendLog(sourceId, action, status, message) {
+function appendLog(sourceId, action, status, message, detail) {
   const logs = readLogs();
-  logs.unshift({ source_id: sourceId, action, status, message, time: new Date().toISOString() });
-  // Keep last 500 entries
+  const entry = { source_id: sourceId, action, status, message, time: new Date().toISOString() };
+  if (detail) entry.detail = detail;
+  logs.unshift(entry);
   if (logs.length > 500) logs.length = 500;
   writeFileSync(LOGS_PATH, JSON.stringify(logs, null, 2) + "\n");
   console.log(`[${action}] ${sourceId}: ${status} — ${message}`);
@@ -188,14 +189,23 @@ const server = createServer(async (req, res) => {
     if (!src) return json(res, { error: "source not found" }, 404);
     if (analyzingProcesses.has(id)) return json(res, { error: "already analyzing" }, 409);
 
+    // Check for error context (re-analyze with feedback)
+    let errorContext = "";
+    try {
+      const body = JSON.parse(await readBody(req));
+      if (body.error_log) errorContext = body.error_log;
+    } catch {}
+
     src.adapter_status = "generating";
+    delete src.adapter_error;
     writeSources(sources);
+    appendLog(id, "analyze", "start", `Analyzing ${src.url}` + (errorContext ? " (with error feedback)" : ""));
 
     const adapterFile = `${id}.mjs`;
     const adapterPath = join(ADAPTERS_DIR, adapterFile);
     mkdirSync(ADAPTERS_DIR, { recursive: true });
 
-    const prompt = `You are writing a Node.js ESM adapter script for a skills/commands marketplace crawler.
+    let prompt = `You are writing a Node.js ESM adapter script for a skills/commands marketplace crawler.
 
 Source URL: ${src.url}
 Source type: ${src.type}
@@ -222,7 +232,16 @@ Your job:
    - Skips items whose id is in opts.existingIds
    - Sets type correctly based on where/how the files are organized
 
-Return ONLY the JavaScript code. No markdown fences, no explanation, no comments outside the code.`;
+CRITICAL: Your response must contain ONLY the raw JavaScript source code. No markdown fences, no explanation, no commentary before or after. The first character must be a JS statement (import/export/const/async/function or //comment). Any non-code text will cause a syntax error.`;
+
+    // Append error context if re-analyzing
+    if (errorContext) {
+      prompt += `\n\nPREVIOUS ATTEMPT FAILED. Here is the error log — fix the issues:\n${errorContext}`;
+      // Also include the previous adapter code if it exists
+      if (existsSync(adapterPath)) {
+        prompt += `\n\nPrevious adapter code:\n${readFileSync(adapterPath, "utf8")}`;
+      }
+    }
 
     // Spawn claude CLI in background
     const child = spawn("claude", ["-p", prompt, "--output-format", "json"], {
@@ -242,20 +261,41 @@ Return ONLY the JavaScript code. No markdown fences, no explanation, no comments
 
       try {
         if (code !== 0) throw new Error(stderr || `claude exited with code ${code}`);
-        // Parse claude JSON output, extract the result text
         const parsed = JSON.parse(stdout);
-        let code_text = parsed.result || parsed;
-        if (typeof code_text !== "string") code_text = JSON.stringify(code_text);
-        // Strip markdown fences if present
-        code_text = code_text.replace(/^```(?:javascript|js)?\n?/gm, "").replace(/```\s*$/gm, "").trim();
+        let code_text = typeof parsed.result === "string" ? parsed.result : JSON.stringify(parsed);
+
+        // Extract code from markdown fences if present
+        const fenceMatch = code_text.match(/```(?:javascript|js)?\n([\s\S]*?)```/);
+        if (fenceMatch) {
+          code_text = fenceMatch[1];
+        } else {
+          // Try to find where actual JS code starts
+          const jsStart = code_text.match(/^(\/\/|import |export |const |async |function )/m);
+          if (jsStart) {
+            code_text = code_text.slice(jsStart.index);
+          }
+          // Trim trailing non-code text after the last closing brace/semicolon
+          const lastCodeChar = Math.max(code_text.lastIndexOf("};"), code_text.lastIndexOf("}\n"));
+          if (lastCodeChar > 0 && lastCodeChar < code_text.length - 5) {
+            code_text = code_text.slice(0, lastCodeChar + 2);
+          }
+        }
+        code_text = code_text.trim();
+
+        if (!code_text.includes("export") && !code_text.includes("function")) {
+          throw new Error("Claude did not generate valid adapter code. Output: " + code_text.slice(0, 200));
+        }
+
         writeFileSync(adapterPath, code_text + "\n");
         src.adapter = adapterFile;
         src.adapter_status = "ready";
-        appendLog(id, "analyze", "ok", `Adapter generated: ${adapterFile}`);
+        appendLog(id, "analyze", "ok", `Adapter generated: ${adapterFile} (${code_text.split("\n").length} lines)`, code_text.slice(0, 500));
       } catch (e) {
         src.adapter_status = "error";
         src.adapter_error = e.message;
-        appendLog(id, "analyze", "error", e.message);
+        // Save raw claude output for debugging
+        const rawOutput = typeof parsed?.result === "string" ? parsed.result : stdout;
+        appendLog(id, "analyze", "error", e.message, rawOutput?.slice(0, 1000));
       }
       writeSources(sources);
     });
@@ -329,11 +369,13 @@ Return ONLY the JavaScript code. No markdown fences, no explanation, no comments
       writeSources(sources);
 
       const msg = `Added ${added} new items (${items.length} total from source, ${items.length - added} skipped as duplicates)`;
-      appendLog(id, "sync", "ok", msg);
+      const itemNames = items.slice(0, 20).map(i => `${i.type||"?"}: ${i.name}`).join(", ");
+      appendLog(id, "sync", "ok", msg, itemNames + (items.length > 20 ? ` ... and ${items.length - 20} more` : ""));
       return json(res, { ok: true, added, total: items.length, message: msg });
     } catch (e) {
-      appendLog(id, "sync", "error", e.message);
-      return json(res, { error: e.message }, 500);
+      const stack = e.stack || e.message;
+      appendLog(id, "sync", "error", e.message, stack);
+      return json(res, { error: e.message, stack }, 500);
     }
   }
 
@@ -558,6 +600,15 @@ button.danger:hover{background:#f85149}
 .adapter-generating{background:#9e6a0333;color:#d29922}
 .adapter-ready{background:#23863633;color:#3fb950}
 .adapter-error{background:#da363333;color:#f85149}
+.log-entry{padding:8px 10px;border-bottom:1px solid #21262d;font-size:12px}
+.log-entry:last-child{border-bottom:none}
+.log-time{color:#484f58;font-size:11px}
+.log-action{color:#58a6ff;font-weight:600}
+.log-ok{color:#3fb950}
+.log-error{color:#f85149}
+.log-start,.log-running{color:#d29922}
+.log-detail{margin-top:4px;padding:6px 8px;background:#0d1117;border-radius:4px;font-family:"SF Mono","Fira Code",monospace;font-size:11px;color:#8b949e;max-height:150px;overflow:auto;white-space:pre-wrap;word-break:break-all;cursor:pointer}
+.log-detail.collapsed{max-height:40px;overflow:hidden}
 .tree-root{font-family:"SF Mono","Fira Code",monospace;font-size:13px}
 .tree-dir{margin:1px 0}
 .tree-label{padding:4px 8px;cursor:pointer;color:#e6edf3;border-radius:4px;user-select:none}
@@ -582,6 +633,7 @@ button.danger:hover{background:#f85149}
   <div class="tab" onclick="switchTab('staging')">Staging <span class="badge" id="staging-count">0</span></div>
   <div class="tab" onclick="switchTab('skills')">Skills <span class="badge" id="skills-count">0</span></div>
   <div class="tab" onclick="switchTab('commands')">Commands <span class="badge" id="commands-count">0</span></div>
+  <div class="tab" onclick="switchTab('debug')">Debug</div>
 </div>
 
 <div class="pane active" id="pane-sources">
@@ -648,6 +700,64 @@ button.danger:hover{background:#f85149}
   <div id="commands-list"></div>
 </div>
 
+<!-- Debug -->
+<div class="pane" id="pane-debug">
+  <div class="bar">
+    <select class="search-box" id="debug-source" style="width:300px" onchange="loadDebug()">
+      <option value="">Select a source...</option>
+    </select>
+    <div class="bar-right">
+      <button onclick="loadDebug()">Refresh</button>
+    </div>
+  </div>
+
+  <div id="debug-content" style="display:none">
+    <!-- Adapter Code -->
+    <div class="card">
+      <div class="card-head"><h3>Adapter Code</h3>
+        <div class="actions">
+          <span class="meta" id="debug-adapter-status"></span>
+          <button onclick="debugAnalyze()">Analyze</button>
+          <button onclick="debugReanalyze()">Re-analyze with Error</button>
+          <button class="primary" onclick="debugSaveAdapter()">Save</button>
+        </div>
+      </div>
+      <div style="margin-top:8px">
+        <textarea id="debug-code" style="width:100%;min-height:300px;background:#0d1117;color:#c9d1d9;border:1px solid #30363d;border-radius:6px;padding:10px;font-family:'SF Mono','Fira Code',monospace;font-size:12px;resize:vertical"></textarea>
+      </div>
+    </div>
+
+    <!-- Error Feedback for Re-analyze -->
+    <div class="card" id="debug-error-card" style="display:none">
+      <div class="card-head"><h3>Error Feedback</h3></div>
+      <div style="margin-top:8px">
+        <textarea id="debug-error-input" placeholder="Paste error logs here, then click Re-analyze..." style="width:100%;min-height:100px;background:#0d1117;color:#f85149;border:1px solid #da3633;border-radius:6px;padding:10px;font-family:'SF Mono','Fira Code',monospace;font-size:12px;resize:vertical"></textarea>
+        <div style="margin-top:8px;display:flex;gap:8px">
+          <button class="primary" onclick="submitReanalyze()">Send to Claude & Re-generate</button>
+          <button onclick="E('debug-error-card').style.display='none'">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sync Controls -->
+    <div class="card">
+      <div class="card-head"><h3>Sync</h3>
+        <div class="actions">
+          <button class="primary" onclick="debugSync()">Run Sync</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Execution Logs -->
+    <div class="card">
+      <div class="card-head"><h3>Execution Logs</h3>
+        <div class="actions"><button onclick="loadDebugLogs()">Refresh</button></div>
+      </div>
+      <div id="debug-logs" style="margin-top:8px;max-height:500px;overflow-y:auto"></div>
+    </div>
+  </div>
+</div>
+
 <!-- Add Modal -->
 <div class="overlay" id="add-overlay" onclick="if(event.target===this)E('add-overlay').classList.remove('open')">
   <div class="modal">
@@ -710,7 +820,7 @@ const E=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
 let stagingData=[],pubData={skills:[],commands:[]};
 let stagingFilter="pending",stagingSearch="",stagingSourceFilter="",pubSearch={skills:"",commands:""};
-const tabNames=["sources","staging","skills","commands"];
+const tabNames=["sources","staging","skills","commands","debug"];
 
 function switchTab(name){
   document.querySelectorAll("#main-tabs .tab").forEach((t,i)=>t.classList.toggle("active",tabNames[i]===name));
@@ -718,6 +828,7 @@ function switchTab(name){
   E("pane-"+name).classList.add("active");
   if(name==="sources")loadSources();if(name==="staging")loadStaging();
   if(name==="skills")loadPub("skills");if(name==="commands")loadPub("commands");
+  if(name==="debug"){populateDebugSources();loadDebug()}
 }
 function togglePreview(id){const el=E(id);if(el)el.classList.toggle("open")}
 function matchSearch(item,q){if(!q)return true;q=q.toLowerCase();const i=item.info||item;return[i.name,i.display_name,i.description,i.source_repo,(i.tags||[]).join(" ")].some(v=>(v||"").toLowerCase().includes(q))}
@@ -967,6 +1078,98 @@ function renderPub(type){
 async function delPub(type,name){if(!confirm("Delete "+name+"? (git push)"))return;const r=await fetch("/api/"+type+"/"+encodeURIComponent(name),{method:"DELETE"});if(!r.ok){const d=await r.json();alert("Error: "+(d.error||"unknown"))}loadPub(type)}
 async function rebuild(){const r=await fetch("/api/rebuild",{method:"POST"});if(r.ok){alert("Registry rebuilt");loadPub("skills");loadPub("commands")}else{const d=await r.json();alert("Error: "+d.error)}}
 async function loadCounts(){try{const[st,sk,cm]=await Promise.all([fetch("/api/staging").then(r=>r.json()),fetch("/api/skills").then(r=>r.json()),fetch("/api/commands").then(r=>r.json())]);E("staging-count").textContent=st.filter(s=>s.status==="pending").length;E("skills-count").textContent=sk.length;E("commands-count").textContent=cm.length}catch{}}
+
+// ── Debug ──
+let debugSourceId="";
+async function loadDebug(){
+  debugSourceId=E("debug-source").value;
+  const content=E("debug-content");
+  if(!debugSourceId){content.style.display="none";return}
+  content.style.display="block";
+  // Load adapter code
+  try{
+    const r=await fetch("/api/sources/"+encodeURIComponent(debugSourceId)+"/adapter");
+    if(r.ok){const d=await r.json();E("debug-code").value=d.code||""}
+    else E("debug-code").value="// No adapter yet. Click Analyze to generate."
+  }catch{E("debug-code").value="// Error loading adapter"}
+  // Load status
+  const srcs=await(await fetch("/api/sources")).json();
+  const src=(srcs.sources||[]).find(s=>s.id===debugSourceId);
+  E("debug-adapter-status").textContent=src?("Status: "+src.adapter_status+(src.adapter_error?" — "+src.adapter_error:"")):"";
+  loadDebugLogs();
+}
+async function loadDebugLogs(){
+  if(!debugSourceId)return;
+  const logs=await(await fetch("/api/logs?source="+encodeURIComponent(debugSourceId)+"&limit=50")).json();
+  const el=E("debug-logs");
+  if(!logs.length){el.innerHTML='<div class="meta" style="padding:8px">No logs yet</div>';return}
+  el.innerHTML=logs.map(l=>{
+    const hasDetail=l.detail&&l.detail.length>0;
+    return'<div class="log-entry">'
+      +'<span class="log-action">'+esc(l.action)+'</span> '
+      +'<span class="log-'+l.status+'">'+esc(l.status)+'</span> '
+      +'<span class="log-time">'+new Date(l.time).toLocaleString()+'</span>'
+      +'<div style="color:#c9d1d9;margin-top:2px">'+esc(l.message)+'</div>'
+      +(hasDetail?'<div class="log-detail collapsed" onclick="this.classList.toggle(\\'collapsed\\')">'+esc(l.detail)+'</div>':'')
+      +'</div>'}).join("")}
+
+async function debugAnalyze(){
+  if(!debugSourceId)return;
+  E("debug-adapter-status").textContent="Status: generating...";
+  await fetch("/api/sources/"+encodeURIComponent(debugSourceId)+"/analyze",{method:"POST"});
+  // Poll
+  const poll=setInterval(async()=>{
+    const srcs=await(await fetch("/api/sources")).json();
+    const src=(srcs.sources||[]).find(s=>s.id===debugSourceId);
+    if(src&&src.adapter_status!=="generating"){
+      clearInterval(poll);loadDebug()}
+  },3000)}
+
+function debugReanalyze(){
+  E("debug-error-card").style.display="block";
+  E("debug-error-input").value=""}
+
+async function submitReanalyze(){
+  if(!debugSourceId)return;
+  const errorLog=E("debug-error-input").value.trim();
+  if(!errorLog){alert("Please paste the error log");return}
+  E("debug-error-card").style.display="none";
+  E("debug-adapter-status").textContent="Status: re-generating with error feedback...";
+  await fetch("/api/sources/"+encodeURIComponent(debugSourceId)+"/analyze",{
+    method:"POST",body:JSON.stringify({error_log:errorLog})});
+  const poll=setInterval(async()=>{
+    const srcs=await(await fetch("/api/sources")).json();
+    const src=(srcs.sources||[]).find(s=>s.id===debugSourceId);
+    if(src&&src.adapter_status!=="generating"){
+      clearInterval(poll);loadDebug()}
+  },3000)}
+
+async function debugSaveAdapter(){
+  if(!debugSourceId)return;
+  await fetch("/api/sources/"+encodeURIComponent(debugSourceId)+"/adapter",{
+    method:"PUT",body:JSON.stringify({code:E("debug-code").value})});
+  alert("Adapter saved");loadDebug()}
+
+async function debugSync(){
+  if(!debugSourceId)return;
+  E("debug-adapter-status").textContent="Status: syncing...";
+  const r=await fetch("/api/sources/"+encodeURIComponent(debugSourceId)+"/sync",{method:"POST"});
+  const d=await r.json();
+  if(r.ok){alert(d.message||"Sync done")}
+  else{
+    alert("Sync error: "+(d.error||"unknown"));
+    // Auto-fill error feedback
+    E("debug-error-card").style.display="block";
+    E("debug-error-input").value=(d.error||"")+(d.stack?"\\n\\nStack:\\n"+d.stack:"")}
+  loadDebug();loadCounts()}
+
+// Populate debug source selector when switching to debug tab
+function populateDebugSources(){
+  const sel=E("debug-source");const prev=sel.value;
+  const srcs=sourcesData.sources||[];
+  sel.innerHTML='<option value="">Select a source...</option>'+srcs.map(s=>
+    '<option value="'+esc(s.id)+'"'+(s.id===prev?' selected':'')+'>'+esc(s.name)+' ('+s.adapter_status+')</option>').join("");
+}
 
 loadSources();loadCounts();
 </script>
