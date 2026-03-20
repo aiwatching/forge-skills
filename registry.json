@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-03-20T22:13:48.582Z",
-  "total": 14,
+  "updated_at": "2026-03-20T22:21:06.496Z",
+  "total": 15,
   "skills": [
     {
       "name": "cloudflare-manager",
@@ -104,6 +104,27 @@
       "tags": [
         "gstack",
         "plan-ceo-review"
+      ],
+      "license": "",
+      "score": 45
+    },
+    {
+      "name": "plan-eng-review",
+      "type": "skill",
+      "display_name": "plan-eng-review",
+      "description": "| Eng manager-mode plan review. Lock in the execution plan — architecture, data flow, diagrams, edge cases, test coverage, performance. Walks through issues interactively with opinionated recommendations. Use when asked to \"review the architecture\", \"engineering review\", or \"lock in the plan\". Proactively suggest when the user has a plan or design doc and is about to start coding — to catch architecture issues before implementation.",
+      "author": {
+        "name": "garrytan",
+        "url": "https://github.com/garrytan"
+      },
+      "source": {
+        "repo": "garrytan/gstack",
+        "url": "https://github.com/garrytan/gstack/tree/main/plan-eng-review"
+      },
+      "version": "0.2.0",
+      "tags": [
+        "gstack",
+        "plan-eng-review"
       ],
       "license": "",
       "score": 45
