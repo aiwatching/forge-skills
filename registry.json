@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-03-22T05:54:48.923Z",
-  "total": 14,
+  "updated_at": "2026-03-22T05:55:10.714Z",
+  "total": 15,
   "skills": [
     {
       "name": "cloudflare-manager",
@@ -104,6 +104,27 @@
       "tags": [
         "gstack",
         "design-review"
+      ],
+      "license": "",
+      "score": 45
+    },
+    {
+      "name": "plan-design-review",
+      "type": "skill",
+      "display_name": "plan-design-review",
+      "description": "| Designer's eye plan review — interactive, like CEO and Eng review. Rates each design dimension 0-10, explains what would make it a 10, then fixes the plan to get there. Works in plan mode. For live site visual audits, use /design-review. Use when asked to \"review the design plan\" or \"design critique\". Proactively suggest when the user has a plan with UI/UX components that should be reviewed before implementation.",
+      "author": {
+        "name": "garrytan",
+        "url": "https://github.com/garrytan"
+      },
+      "source": {
+        "repo": "garrytan/gstack",
+        "url": "https://github.com/garrytan/gstack/tree/main/plan-design-review"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "gstack",
+        "plan-design-review"
       ],
       "license": "",
       "score": 45

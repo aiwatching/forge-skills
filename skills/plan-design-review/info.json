@@ -1,0 +1,22 @@
+{
+  "name": "plan-design-review",
+  "type": "skill",
+  "display_name": "plan-design-review",
+  "description": "| Designer's eye plan review — interactive, like CEO and Eng review. Rates each design dimension 0-10, explains what would make it a 10, then fixes the plan to get there. Works in plan mode. For live site visual audits, use /design-review. Use when asked to \"review the design plan\" or \"design critique\". Proactively suggest when the user has a plan with UI/UX components that should be reviewed before implementation.",
+  "author": {
+    "name": "garrytan",
+    "url": "https://github.com/garrytan"
+  },
+  "source": {
+    "repo": "garrytan/gstack",
+    "url": "https://github.com/garrytan/gstack/tree/main/plan-design-review"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "gstack",
+    "plan-design-review"
+  ],
+  "license": "",
+  "rating": 0,
+  "score": 45
+}
