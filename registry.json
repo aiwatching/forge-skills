@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-03-22T05:54:37.496Z",
-  "total": 13,
+  "updated_at": "2026-03-22T05:54:48.923Z",
+  "total": 14,
   "skills": [
     {
       "name": "cloudflare-manager",
@@ -83,6 +83,27 @@
       "tags": [
         "gstack",
         "design-consultation"
+      ],
+      "license": "",
+      "score": 45
+    },
+    {
+      "name": "design-review",
+      "type": "skill",
+      "display_name": "design-review",
+      "description": "| Designer's eye QA: finds visual inconsistency, spacing issues, hierarchy problems, AI slop patterns, and slow interactions — then fixes them. Iteratively fixes issues in source code, committing each fix atomically and re-verifying with before/after screenshots. For plan-mode design review (before implementation), use /plan-design-review. Use when asked to \"audit the design\", \"visual QA\", \"check if it looks good\", or \"design polish\". Proactively suggest when the user mentions visual inconsistencies or wants to polish the look of a live site.",
+      "author": {
+        "name": "garrytan",
+        "url": "https://github.com/garrytan"
+      },
+      "source": {
+        "repo": "garrytan/gstack",
+        "url": "https://github.com/garrytan/gstack/tree/main/design-review"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "gstack",
+        "design-review"
       ],
       "license": "",
       "score": 45
