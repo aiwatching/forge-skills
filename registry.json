@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-03-21T04:37:17.669Z",
-  "total": 12,
+  "updated_at": "2026-03-22T05:54:37.496Z",
+  "total": 13,
   "skills": [
     {
       "name": "cloudflare-manager",
@@ -62,6 +62,27 @@
       "tags": [
         "gstack",
         "careful"
+      ],
+      "license": "",
+      "score": 45
+    },
+    {
+      "name": "design-consultation",
+      "type": "skill",
+      "display_name": "design-consultation",
+      "description": "| Design consultation: understands your product, researches the landscape, proposes a complete design system (aesthetic, typography, color, layout, spacing, motion), and generates font+color preview pages. Creates DESIGN.md as your project's design source of truth. For existing sites, use /plan-design-review to infer the system instead. Use when asked to \"design system\", \"brand guidelines\", or \"create DESIGN.md\". Proactively suggest when starting a new project's UI with no existing design system or DESIGN.md.",
+      "author": {
+        "name": "garrytan",
+        "url": "https://github.com/garrytan"
+      },
+      "source": {
+        "repo": "garrytan/gstack",
+        "url": "https://github.com/garrytan/gstack/tree/main/design-consultation"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "gstack",
+        "design-consultation"
       ],
       "license": "",
       "score": 45
