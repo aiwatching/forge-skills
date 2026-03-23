@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-03-22T05:55:10.714Z",
-  "total": 15,
+  "updated_at": "2026-03-23T04:13:06.901Z",
+  "total": 16,
   "skills": [
     {
       "name": "cloudflare-manager",
@@ -22,6 +22,7 @@
         "skill"
       ],
       "license": "",
+      "rating": 5,
       "score": 115
     },
     {
@@ -43,6 +44,7 @@
         "skill"
       ],
       "license": "",
+      "rating": 5,
       "score": 45
     },
     {
@@ -64,6 +66,7 @@
         "careful"
       ],
       "license": "",
+      "rating": 2,
       "score": 45
     },
     {
@@ -85,6 +88,7 @@
         "design-consultation"
       ],
       "license": "",
+      "rating": 0,
       "score": 45
     },
     {
@@ -106,6 +110,7 @@
         "design-review"
       ],
       "license": "",
+      "rating": 0,
       "score": 45
     },
     {
@@ -127,6 +132,7 @@
         "plan-design-review"
       ],
       "license": "",
+      "rating": 0,
       "score": 45
     },
     {
@@ -148,6 +154,7 @@
         "plan-eng-review"
       ],
       "license": "",
+      "rating": 4,
       "score": 45
     },
     {
@@ -169,6 +176,7 @@
         "qa"
       ],
       "license": "",
+      "rating": 3,
       "score": 45
     },
     {
@@ -190,6 +198,7 @@
         "setup-browser-cookies"
       ],
       "license": "",
+      "rating": 4,
       "score": 45
     },
     {
@@ -208,6 +217,7 @@
       "version": "0.1.0",
       "tags": [],
       "license": "MIT",
+      "rating": 1,
       "score": 35
     }
   ],
@@ -232,6 +242,7 @@
         "example"
       ],
       "license": "Apache-2.0",
+      "rating": 0,
       "score": 35
     },
     {
@@ -253,6 +264,7 @@
         "documentation"
       ],
       "license": "Apache-2.0",
+      "rating": 0,
       "score": 35
     },
     {
@@ -274,6 +286,7 @@
         "code-quality"
       ],
       "license": "Apache-2.0",
+      "rating": 0,
       "score": 35
     },
     {
@@ -296,6 +309,7 @@
         "quality"
       ],
       "license": "Apache-2.0",
+      "rating": 4,
       "score": 35
     },
     {
@@ -317,7 +331,31 @@
         "quality"
       ],
       "license": "Apache-2.0",
+      "rating": 0,
       "score": 35
+    },
+    {
+      "name": "code-review",
+      "type": "command",
+      "display_name": "Code Review",
+      "description": "Perform comprehensive code quality review",
+      "author": {
+        "name": "qdhenry",
+        "url": "https://github.com/qdhenry"
+      },
+      "source": {
+        "repo": "qdhenry/Claude-Command-Suite",
+        "url": "https://github.com/qdhenry/Claude-Command-Suite/blob/main/.claude/commands/dev/code-review.md"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "claude-command-suite",
+        "command",
+        "dev"
+      ],
+      "license": "",
+      "rating": 0,
+      "score": 10
     }
   ]
 }

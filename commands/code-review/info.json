@@ -1,0 +1,23 @@
+{
+  "name": "code-review",
+  "type": "command",
+  "display_name": "Code Review",
+  "description": "Perform comprehensive code quality review",
+  "author": {
+    "name": "qdhenry",
+    "url": "https://github.com/qdhenry"
+  },
+  "source": {
+    "repo": "qdhenry/Claude-Command-Suite",
+    "url": "https://github.com/qdhenry/Claude-Command-Suite/blob/main/.claude/commands/dev/code-review.md"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "claude-command-suite",
+    "command",
+    "dev"
+  ],
+  "license": "",
+  "rating": 0,
+  "score": 10
+}
