@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-03-23T04:51:09.910Z",
-  "total": 16,
+  "updated_at": "2026-03-23T05:04:45.351Z",
+  "total": 15,
   "skills": [
     {
       "name": "cloudflare-manager",
@@ -310,29 +310,6 @@
       ],
       "license": "Apache-2.0",
       "rating": 0,
-      "score": 35
-    },
-    {
-      "name": "review-code",
-      "type": "command",
-      "display_name": "Code Review",
-      "description": "对当前 git diff 进行代码审查，检查 bug、安全问题、性能问题和代码风格",
-      "author": {
-        "name": "aiwatching",
-        "url": "https://github.com/aiwatching"
-      },
-      "source": {
-        "repo": "aiwatching/forge-skills",
-        "url": "https://github.com/aiwatching/forge-skills"
-      },
-      "version": "0.1.0",
-      "tags": [
-        "git",
-        "code-review",
-        "quality"
-      ],
-      "license": "Apache-2.0",
-      "rating": 4,
       "score": 35
     },
     {
