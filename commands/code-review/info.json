@@ -11,13 +11,13 @@
     "repo": "qdhenry/Claude-Command-Suite",
     "url": "https://github.com/qdhenry/Claude-Command-Suite/blob/main/.claude/commands/dev/code-review.md"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "tags": [
     "claude-command-suite",
     "command",
     "dev"
   ],
   "license": "",
-  "rating": 0,
-  "score": 10
+  "rating": 5,
+  "score": 40
 }

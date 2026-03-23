@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-03-23T04:13:06.901Z",
+  "updated_at": "2026-03-23T04:51:09.910Z",
   "total": 16,
   "skills": [
     {
@@ -223,6 +223,29 @@
   ],
   "commands": [
     {
+      "name": "code-review",
+      "type": "command",
+      "display_name": "Code Review",
+      "description": "Perform comprehensive code quality review",
+      "author": {
+        "name": "qdhenry",
+        "url": "https://github.com/qdhenry"
+      },
+      "source": {
+        "repo": "qdhenry/Claude-Command-Suite",
+        "url": "https://github.com/qdhenry/Claude-Command-Suite/blob/main/.claude/commands/dev/code-review.md"
+      },
+      "version": "0.1.1",
+      "tags": [
+        "claude-command-suite",
+        "command",
+        "dev"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 40
+    },
+    {
       "name": "example-commit",
       "type": "command",
       "display_name": "Example: Smart Commit",
@@ -333,29 +356,6 @@
       "license": "Apache-2.0",
       "rating": 0,
       "score": 35
-    },
-    {
-      "name": "code-review",
-      "type": "command",
-      "display_name": "Code Review",
-      "description": "Perform comprehensive code quality review",
-      "author": {
-        "name": "qdhenry",
-        "url": "https://github.com/qdhenry"
-      },
-      "source": {
-        "repo": "qdhenry/Claude-Command-Suite",
-        "url": "https://github.com/qdhenry/Claude-Command-Suite/blob/main/.claude/commands/dev/code-review.md"
-      },
-      "version": "0.1.0",
-      "tags": [
-        "claude-command-suite",
-        "command",
-        "dev"
-      ],
-      "license": "",
-      "rating": 0,
-      "score": 10
     }
   ]
 }
