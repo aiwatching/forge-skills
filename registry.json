@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-03-23T15:55:19.279Z",
-  "total": 17,
+  "updated_at": "2026-03-23T21:12:42.761Z",
+  "total": 18,
   "skills": [
     {
       "name": "frontend-slides",
@@ -112,6 +112,28 @@
       ],
       "license": "",
       "rating": 2,
+      "score": 45
+    },
+    {
+      "name": "codex",
+      "type": "skill",
+      "display_name": "codex",
+      "description": "| OpenAI Codex CLI wrapper — three modes. Code review: independent diff review via codex review with pass/fail gate. Challenge: adversarial mode that tries to break your code. Consult: ask codex anything with session continuity for follow-ups. The \"200 IQ autistic developer\" second opinion. Use when asked to \"codex review\", \"codex challenge\", \"ask codex\", \"second opinion\", or \"consult codex\".",
+      "author": {
+        "name": "garrytan",
+        "url": "https://github.com/garrytan"
+      },
+      "source": {
+        "repo": "garrytan/gstack",
+        "url": "https://github.com/garrytan/gstack/tree/main/codex"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "gstack",
+        "codex"
+      ],
+      "license": "",
+      "rating": 3,
       "score": 45
     },
     {
