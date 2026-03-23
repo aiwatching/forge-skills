@@ -1,8 +1,27 @@
 {
   "version": 2,
-  "updated_at": "2026-03-23T06:23:56.262Z",
-  "total": 16,
+  "updated_at": "2026-03-23T15:55:19.279Z",
+  "total": 17,
   "skills": [
+    {
+      "name": "frontend-slides",
+      "type": "skill",
+      "display_name": "frontend-slides",
+      "description": "Frontend Slides",
+      "author": {
+        "name": "zarazhangrui",
+        "url": "https://github.com/zarazhangrui"
+      },
+      "source": {
+        "repo": "zarazhangrui/frontend-slides",
+        "url": "https://github.com/zarazhangrui/frontend-slides"
+      },
+      "version": "0.1.0",
+      "tags": [],
+      "license": "MIT",
+      "rating": 5,
+      "score": 140
+    },
     {
       "name": "cloudflare-manager",
       "type": "skill",

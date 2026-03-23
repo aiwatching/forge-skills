@@ -1,0 +1,19 @@
+{
+  "name": "frontend-slides",
+  "type": "skill",
+  "display_name": "frontend-slides",
+  "description": "Frontend Slides",
+  "author": {
+    "name": "zarazhangrui",
+    "url": "https://github.com/zarazhangrui"
+  },
+  "source": {
+    "repo": "zarazhangrui/frontend-slides",
+    "url": "https://github.com/zarazhangrui/frontend-slides"
+  },
+  "version": "0.1.0",
+  "tags": [],
+  "license": "MIT",
+  "rating": 5,
+  "score": 140
+}
