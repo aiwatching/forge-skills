@@ -1,0 +1,26 @@
+{
+  "name": "follow-builders",
+  "type": "skill",
+  "display_name": "Follow Builders",
+  "description": "name: follow-builders",
+  "author": {
+    "name": "zarazhangrui",
+    "url": "https://github.com/zarazhangrui"
+  },
+  "source": {
+    "repo": "zarazhangrui/follow-builders",
+    "url": "https://github.com/zarazhangrui/follow-builders/tree/main"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "follow-builders",
+    "skill",
+    "ai",
+    "digest",
+    "podcast",
+    "twitter"
+  ],
+  "license": "",
+  "rating": 5,
+  "score": 115
+}
