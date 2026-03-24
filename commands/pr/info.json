@@ -1,0 +1,26 @@
+{
+  "name": "pr",
+  "type": "command",
+  "display_name": "Pr",
+  "description": "description: Create a pull request from the current branch.",
+  "author": {
+    "name": {
+      "name": "alirezarezvani",
+      "url": "https://github.com/alirezarezvani"
+    },
+    "url": "https://github.com/[object Object]"
+  },
+  "source": {
+    "repo": "alirezarezvani/claude-skills",
+    "url": "https://github.com/alirezarezvani/claude-skills/blob/main/.claude/commands/git/pr.md"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "alirezarezvani-claude-skills",
+    "command",
+    "git"
+  ],
+  "license": "",
+  "rating": 3,
+  "score": 40
+}

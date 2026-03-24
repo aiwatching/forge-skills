@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-03-24T01:57:23.802Z",
-  "total": 28,
+  "updated_at": "2026-03-24T02:02:26.268Z",
+  "total": 32,
   "skills": [
     {
       "name": "frontend-slides",
@@ -490,6 +490,32 @@
   ],
   "commands": [
     {
+      "name": "clean",
+      "type": "command",
+      "display_name": "Clean",
+      "description": "description: Clean up merged branches locally and on remote, keeping only main, dev, and gh-pages.",
+      "author": {
+        "name": {
+          "name": "alirezarezvani",
+          "url": "https://github.com/alirezarezvani"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "alirezarezvani/claude-skills",
+        "url": "https://github.com/alirezarezvani/claude-skills/blob/main/.claude/commands/git/clean.md"
+      },
+      "version": "0.1.1",
+      "tags": [
+        "alirezarezvani-claude-skills",
+        "command",
+        "git"
+      ],
+      "license": "",
+      "rating": 3,
+      "score": 45
+    },
+    {
       "name": "security-scan",
       "type": "command",
       "display_name": "Security Scan",
@@ -537,6 +563,84 @@
       "license": "",
       "rating": 5,
       "score": 40
+    },
+    {
+      "name": "pr",
+      "type": "command",
+      "display_name": "Pr",
+      "description": "description: Create a pull request from the current branch.",
+      "author": {
+        "name": {
+          "name": "alirezarezvani",
+          "url": "https://github.com/alirezarezvani"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "alirezarezvani/claude-skills",
+        "url": "https://github.com/alirezarezvani/claude-skills/blob/main/.claude/commands/git/pr.md"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "alirezarezvani-claude-skills",
+        "command",
+        "git"
+      ],
+      "license": "",
+      "rating": 3,
+      "score": 40
+    },
+    {
+      "name": "cm",
+      "type": "command",
+      "display_name": "Cm",
+      "description": "description: Stage working tree changes and create a Conventional Commit (no push).",
+      "author": {
+        "name": {
+          "name": "alirezarezvani",
+          "url": "https://github.com/alirezarezvani"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "alirezarezvani/claude-skills",
+        "url": "https://github.com/alirezarezvani/claude-skills/blob/main/.claude/commands/git/cm.md"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "alirezarezvani-claude-skills",
+        "command",
+        "git"
+      ],
+      "license": "",
+      "rating": 3,
+      "score": 35
+    },
+    {
+      "name": "cp",
+      "type": "command",
+      "display_name": "Cp",
+      "description": "description: Stage, commit, and push the current branch following git governance rules.",
+      "author": {
+        "name": {
+          "name": "alirezarezvani",
+          "url": "https://github.com/alirezarezvani"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "alirezarezvani/claude-skills",
+        "url": "https://github.com/alirezarezvani/claude-skills/blob/main/.claude/commands/git/cp.md"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "alirezarezvani-claude-skills",
+        "command",
+        "git"
+      ],
+      "license": "",
+      "rating": 3,
+      "score": 35
     },
     {
       "name": "example-commit",
