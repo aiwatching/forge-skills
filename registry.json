@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-03-24T01:53:31.073Z",
-  "total": 22,
+  "updated_at": "2026-03-24T01:57:23.802Z",
+  "total": 28,
   "skills": [
     {
       "name": "frontend-slides",
@@ -313,6 +313,156 @@
       "tags": [
         "gstack",
         "setup-browser-cookies"
+      ],
+      "license": "",
+      "rating": 4,
+      "score": 45
+    },
+    {
+      "name": "site-architecture",
+      "type": "skill",
+      "display_name": "Site Architecture",
+      "description": "name: \"site-architecture\"",
+      "author": {
+        "name": {
+          "name": "alirezarezvani",
+          "url": "https://github.com/alirezarezvani"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "alirezarezvani/claude-skills",
+        "url": "https://github.com/alirezarezvani/claude-skills/tree/main/.gemini/skills/site-architecture"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "alirezarezvani-claude-skills",
+        "skill"
+      ],
+      "license": "",
+      "rating": 4,
+      "score": 45
+    },
+    {
+      "name": "skill-security-auditor",
+      "type": "skill",
+      "display_name": "Skill Security Auditor",
+      "description": "name: \"skill-security-auditor\"",
+      "author": {
+        "name": {
+          "name": "alirezarezvani",
+          "url": "https://github.com/alirezarezvani"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "alirezarezvani/claude-skills",
+        "url": "https://github.com/alirezarezvani/claude-skills/tree/main/.gemini/skills/skill-security-auditor"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "alirezarezvani-claude-skills",
+        "skill"
+      ],
+      "license": "",
+      "rating": 4,
+      "score": 45
+    },
+    {
+      "name": "skill-tester",
+      "type": "skill",
+      "display_name": "Skill Tester",
+      "description": "name: \"skill-tester\"",
+      "author": {
+        "name": {
+          "name": "alirezarezvani",
+          "url": "https://github.com/alirezarezvani"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "alirezarezvani/claude-skills",
+        "url": "https://github.com/alirezarezvani/claude-skills/tree/main/.gemini/skills/skill-tester"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "alirezarezvani-claude-skills",
+        "skill"
+      ],
+      "license": "",
+      "rating": 4,
+      "score": 45
+    },
+    {
+      "name": "skills-init",
+      "type": "skill",
+      "display_name": "Skills Init",
+      "description": "name: \"init\"",
+      "author": {
+        "name": {
+          "name": "alirezarezvani",
+          "url": "https://github.com/alirezarezvani"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "alirezarezvani/claude-skills",
+        "url": "https://github.com/alirezarezvani/claude-skills/tree/main/.gemini/skills/skills-init"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "alirezarezvani-claude-skills",
+        "skill"
+      ],
+      "license": "",
+      "rating": 4,
+      "score": 45
+    },
+    {
+      "name": "skills-review",
+      "type": "skill",
+      "display_name": "Skills Review",
+      "description": "name: \"review\"",
+      "author": {
+        "name": {
+          "name": "alirezarezvani",
+          "url": "https://github.com/alirezarezvani"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "alirezarezvani/claude-skills",
+        "url": "https://github.com/alirezarezvani/claude-skills/tree/main/.gemini/skills/skills-review"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "alirezarezvani-claude-skills",
+        "skill"
+      ],
+      "license": "",
+      "rating": 4,
+      "score": 45
+    },
+    {
+      "name": "ui-design-system",
+      "type": "skill",
+      "display_name": "Ui Design System",
+      "description": "name: \"ui-design-system\"",
+      "author": {
+        "name": {
+          "name": "alirezarezvani",
+          "url": "https://github.com/alirezarezvani"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "alirezarezvani/claude-skills",
+        "url": "https://github.com/alirezarezvani/claude-skills/tree/main/.gemini/skills/ui-design-system"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "alirezarezvani-claude-skills",
+        "skill"
       ],
       "license": "",
       "rating": 4,

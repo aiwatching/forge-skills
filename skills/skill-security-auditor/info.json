@@ -1,0 +1,25 @@
+{
+  "name": "skill-security-auditor",
+  "type": "skill",
+  "display_name": "Skill Security Auditor",
+  "description": "name: \"skill-security-auditor\"",
+  "author": {
+    "name": {
+      "name": "alirezarezvani",
+      "url": "https://github.com/alirezarezvani"
+    },
+    "url": "https://github.com/[object Object]"
+  },
+  "source": {
+    "repo": "alirezarezvani/claude-skills",
+    "url": "https://github.com/alirezarezvani/claude-skills/tree/main/.gemini/skills/skill-security-auditor"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "alirezarezvani-claude-skills",
+    "skill"
+  ],
+  "license": "",
+  "rating": 4,
+  "score": 45
+}

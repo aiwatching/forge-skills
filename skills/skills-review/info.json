@@ -1,0 +1,25 @@
+{
+  "name": "skills-review",
+  "type": "skill",
+  "display_name": "Skills Review",
+  "description": "name: \"review\"",
+  "author": {
+    "name": {
+      "name": "alirezarezvani",
+      "url": "https://github.com/alirezarezvani"
+    },
+    "url": "https://github.com/[object Object]"
+  },
+  "source": {
+    "repo": "alirezarezvani/claude-skills",
+    "url": "https://github.com/alirezarezvani/claude-skills/tree/main/.gemini/skills/skills-review"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "alirezarezvani-claude-skills",
+    "skill"
+  ],
+  "license": "",
+  "rating": 4,
+  "score": 45
+}
