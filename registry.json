@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-03-24T01:51:41.131Z",
-  "total": 19,
+  "updated_at": "2026-03-24T01:51:49.316Z",
+  "total": 20,
   "skills": [
     {
       "name": "frontend-slides",
@@ -403,6 +403,32 @@
       ],
       "license": "Apache-2.0",
       "rating": 0,
+      "score": 35
+    },
+    {
+      "name": "review",
+      "type": "command",
+      "display_name": "Review",
+      "description": "description: Run the local review gate before pushing.",
+      "author": {
+        "name": {
+          "name": "alirezarezvani",
+          "url": "https://github.com/alirezarezvani"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "alirezarezvani/claude-skills",
+        "url": "https://github.com/alirezarezvani/claude-skills/blob/main/.claude/commands/review.md"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "alirezarezvani-claude-skills",
+        "command",
+        "general"
+      ],
+      "license": "",
+      "rating": 5,
       "score": 35
     },
     {
