@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-03-24T01:51:49.316Z",
-  "total": 20,
+  "updated_at": "2026-03-24T01:53:19.368Z",
+  "total": 21,
   "skills": [
     {
       "name": "frontend-slides",
@@ -112,6 +112,31 @@
       ],
       "license": "",
       "rating": 2,
+      "score": 45
+    },
+    {
+      "name": "changelog",
+      "type": "skill",
+      "display_name": "Changelog",
+      "description": "name: changelog",
+      "author": {
+        "name": {
+          "name": "alirezarezvani",
+          "url": "https://github.com/alirezarezvani"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "alirezarezvani/claude-skills",
+        "url": "https://github.com/alirezarezvani/claude-skills/tree/main/.gemini/skills/changelog"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "alirezarezvani-claude-skills",
+        "skill"
+      ],
+      "license": "",
+      "rating": 5,
       "score": 45
     },
     {
