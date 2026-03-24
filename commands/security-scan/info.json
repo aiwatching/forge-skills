@@ -1,0 +1,26 @@
+{
+  "name": "security-scan",
+  "type": "command",
+  "display_name": "Security Scan",
+  "description": "description: Run the security scan gate before pushing.",
+  "author": {
+    "name": {
+      "name": "alirezarezvani",
+      "url": "https://github.com/alirezarezvani"
+    },
+    "url": "https://github.com/[object Object]"
+  },
+  "source": {
+    "repo": "alirezarezvani/claude-skills",
+    "url": "https://github.com/alirezarezvani/claude-skills/blob/main/.claude/commands/security-scan.md"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "alirezarezvani-claude-skills",
+    "command",
+    "general"
+  ],
+  "license": "",
+  "rating": 5,
+  "score": 45
+}
