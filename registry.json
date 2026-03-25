@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-03-25T17:12:34.953Z",
-  "total": 34,
+  "updated_at": "2026-03-25T17:18:35.971Z",
+  "total": 66,
   "skills": [
     {
       "name": "frontend-slides",
@@ -71,6 +71,34 @@
       "score": 115
     },
     {
+      "name": "android-clean-architecture",
+      "type": "skill",
+      "display_name": "Android Clean Architecture",
+      "description": "name: android-clean-architecture",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/android-clean-architecture"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "mobile",
+        "architecture",
+        "development"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
       "name": "audit-env-variables",
       "type": "skill",
       "display_name": "Audit Env Variables",
@@ -87,6 +115,34 @@
       "tags": [
         "claude-command-suite",
         "skill"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "bun-runtime",
+      "type": "skill",
+      "display_name": "Bun Runtime",
+      "description": "name: bun-runtime",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/bun-runtime"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "development",
+        "backend",
+        "devops"
       ],
       "license": "",
       "rating": 5,
@@ -140,6 +196,34 @@
       "score": 45
     },
     {
+      "name": "claude-api",
+      "type": "skill",
+      "display_name": "Claude Api",
+      "description": "name: claude-api",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/claude-api"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "ai-ml",
+        "api",
+        "development"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
       "name": "codex",
       "type": "skill",
       "display_name": "codex",
@@ -159,6 +243,172 @@
       ],
       "license": "",
       "rating": 3,
+      "score": 45
+    },
+    {
+      "name": "coding-standards",
+      "type": "skill",
+      "display_name": "Coding Standards",
+      "description": "name: coding-standards",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/coding-standards"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "development",
+        "code-review",
+        "workflow"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "compose-multiplatform-patterns",
+      "type": "skill",
+      "display_name": "Compose Multiplatform Patterns",
+      "description": "name: compose-multiplatform-patterns",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/compose-multiplatform-patterns"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "mobile",
+        "frontend",
+        "development"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "configure-ecc",
+      "type": "skill",
+      "display_name": "Configure Ecc",
+      "description": "name: configure-ecc",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/configure-ecc"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "workflow",
+        "productivity",
+        "development"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "content-hash-cache-pattern",
+      "type": "skill",
+      "display_name": "Content Hash Cache Pattern",
+      "description": "name: content-hash-cache-pattern",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/content-hash-cache-pattern"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "performance",
+        "backend",
+        "development"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "cpp-coding-standards",
+      "type": "skill",
+      "display_name": "Cpp Coding Standards",
+      "description": "name: cpp-coding-standards",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/cpp-coding-standards"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "development",
+        "code-review"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "cpp-testing",
+      "type": "skill",
+      "display_name": "Cpp Testing",
+      "description": "name: cpp-testing",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/cpp-testing"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "testing",
+        "development"
+      ],
+      "license": "",
+      "rating": 5,
       "score": 45
     },
     {
@@ -203,6 +453,34 @@
       ],
       "license": "",
       "rating": 0,
+      "score": 45
+    },
+    {
+      "name": "django-patterns",
+      "type": "skill",
+      "display_name": "Django Patterns",
+      "description": "name: django-patterns",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/django-patterns"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "backend",
+        "development",
+        "api"
+      ],
+      "license": "",
+      "rating": 5,
       "score": 45
     },
     {
@@ -256,6 +534,222 @@
       "score": 45
     },
     {
+      "name": "frontend-patterns",
+      "type": "skill",
+      "display_name": "Frontend Patterns",
+      "description": "name: frontend-patterns",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/frontend-patterns"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "frontend",
+        "development"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "golang-patterns",
+      "type": "skill",
+      "display_name": "Golang Patterns",
+      "description": "name: golang-patterns",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/golang-patterns"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "development",
+        "backend"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "java-coding-standards",
+      "type": "skill",
+      "display_name": "Java Coding Standards",
+      "description": "name: java-coding-standards",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/java-coding-standards"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "development",
+        "backend"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "kotlin-coroutines-flows",
+      "type": "skill",
+      "display_name": "Kotlin Coroutines Flows",
+      "description": "name: kotlin-coroutines-flows",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/kotlin-coroutines-flows"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "mobile",
+        "development"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "kotlin-patterns",
+      "type": "skill",
+      "display_name": "Kotlin Patterns",
+      "description": "name: kotlin-patterns",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/kotlin-patterns"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "development",
+        "backend"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "kotlin-testing",
+      "type": "skill",
+      "display_name": "Kotlin Testing",
+      "description": "name: kotlin-testing",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/kotlin-testing"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "testing",
+        "development"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "perl-patterns",
+      "type": "skill",
+      "display_name": "Perl Patterns",
+      "description": "name: perl-patterns",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/perl-patterns"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "development",
+        "backend"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "perl-testing",
+      "type": "skill",
+      "display_name": "Perl Testing",
+      "description": "name: perl-testing",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/perl-testing"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "testing",
+        "development"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
       "name": "plan-design-review",
       "type": "skill",
       "display_name": "plan-design-review",
@@ -300,6 +794,87 @@
       "score": 45
     },
     {
+      "name": "python-patterns",
+      "type": "skill",
+      "display_name": "Python Patterns",
+      "description": "name: python-patterns",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/python-patterns"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "development",
+        "backend"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "python-testing",
+      "type": "skill",
+      "display_name": "Python Testing",
+      "description": "name: python-testing",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/python-testing"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "testing",
+        "development"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "pytorch-patterns",
+      "type": "skill",
+      "display_name": "Pytorch Patterns",
+      "description": "name: pytorch-patterns",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/pytorch-patterns"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "ai-ml",
+        "development"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
       "name": "qa",
       "type": "skill",
       "display_name": "qa",
@@ -319,6 +894,87 @@
       ],
       "license": "",
       "rating": 3,
+      "score": 45
+    },
+    {
+      "name": "regex-vs-llm-structured-text",
+      "type": "skill",
+      "display_name": "Regex Vs Llm Structured Text",
+      "description": "name: regex-vs-llm-structured-text",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/regex-vs-llm-structured-text"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "development",
+        "ai-ml"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "rust-patterns",
+      "type": "skill",
+      "display_name": "Rust Patterns",
+      "description": "name: rust-patterns",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/rust-patterns"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "development",
+        "backend"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "rust-testing",
+      "type": "skill",
+      "display_name": "Rust Testing",
+      "description": "name: rust-testing",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/rust-testing"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "testing",
+        "development"
+      ],
+      "license": "",
+      "rating": 5,
       "score": 45
     },
     {
@@ -469,6 +1125,87 @@
       "score": 45
     },
     {
+      "name": "springboot-patterns",
+      "type": "skill",
+      "display_name": "Springboot Patterns",
+      "description": "name: springboot-patterns",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/springboot-patterns"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "backend",
+        "development"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "swift-actor-persistence",
+      "type": "skill",
+      "display_name": "Swift Actor Persistence",
+      "description": "name: swift-actor-persistence",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/swift-actor-persistence"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "mobile",
+        "development"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "swift-concurrency-6-2",
+      "type": "skill",
+      "display_name": "Swift Concurrency 6 2",
+      "description": "name: swift-concurrency-6-2",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/swift-concurrency-6-2"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "mobile",
+        "development"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
       "name": "ui-design-system",
       "type": "skill",
       "display_name": "Ui Design System",
@@ -492,6 +1229,61 @@
       "license": "",
       "rating": 4,
       "score": 45
+    },
+    {
+      "name": "ai-first-engineering",
+      "type": "skill",
+      "display_name": "Ai First Engineering",
+      "description": "name: ai-first-engineering",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/ai-first-engineering"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "ai-ml",
+        "workflow",
+        "development"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 40
+    },
+    {
+      "name": "nanoclaw-repl",
+      "type": "skill",
+      "display_name": "Nanoclaw Repl",
+      "description": "name: nanoclaw-repl",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/nanoclaw-repl"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill",
+        "development",
+        "workflow"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 40
     },
     {
       "name": "clean",
@@ -541,6 +1333,56 @@
       "score": 45
     },
     {
+      "name": "eval",
+      "type": "command",
+      "display_name": "Eval",
+      "description": "Manage eval-driven development workflow.",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/blob/main/commands/eval.md"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "command"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "multi-workflow",
+      "type": "command",
+      "display_name": "Multi Workflow",
+      "description": "Multi-model collaborative development workflow (Research → Ideation → Plan → Execute → Optimize → Review), with intelligent routing: Frontend → Gemini, Backend → Codex.",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/blob/main/commands/multi-workflow.md"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "command"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
       "name": "python-review",
       "type": "command",
       "display_name": "Python Review",
@@ -586,6 +1428,31 @@
         "alirezarezvani-claude-skills",
         "command",
         "general"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 45
+    },
+    {
+      "name": "tdd",
+      "type": "command",
+      "display_name": "Tdd",
+      "description": "description: Enforce test-driven development workflow. Scaffold interfaces, generate tests FIRST, then implement minimal code to pass. Ensure 80%+ coverage.",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/blob/main/commands/tdd.md"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "command"
       ],
       "license": "",
       "rating": 5,

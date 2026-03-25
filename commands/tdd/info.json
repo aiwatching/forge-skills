@@ -1,0 +1,25 @@
+{
+  "name": "tdd",
+  "type": "command",
+  "display_name": "Tdd",
+  "description": "description: Enforce test-driven development workflow. Scaffold interfaces, generate tests FIRST, then implement minimal code to pass. Ensure 80%+ coverage.",
+  "author": {
+    "name": {
+      "name": "affaan-m",
+      "url": "https://github.com/affaan-m"
+    },
+    "url": "https://github.com/[object Object]"
+  },
+  "source": {
+    "repo": "affaan-m/everything-claude-code",
+    "url": "https://github.com/affaan-m/everything-claude-code/blob/main/commands/tdd.md"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "everything-claude-code",
+    "command"
+  ],
+  "license": "",
+  "rating": 5,
+  "score": 45
+}

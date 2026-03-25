@@ -1,0 +1,28 @@
+{
+  "name": "django-patterns",
+  "type": "skill",
+  "display_name": "Django Patterns",
+  "description": "name: django-patterns",
+  "author": {
+    "name": {
+      "name": "affaan-m",
+      "url": "https://github.com/affaan-m"
+    },
+    "url": "https://github.com/[object Object]"
+  },
+  "source": {
+    "repo": "affaan-m/everything-claude-code",
+    "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/django-patterns"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "everything-claude-code",
+    "skill",
+    "backend",
+    "development",
+    "api"
+  ],
+  "license": "",
+  "rating": 5,
+  "score": 45
+}

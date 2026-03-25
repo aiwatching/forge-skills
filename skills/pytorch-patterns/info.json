@@ -1,0 +1,27 @@
+{
+  "name": "pytorch-patterns",
+  "type": "skill",
+  "display_name": "Pytorch Patterns",
+  "description": "name: pytorch-patterns",
+  "author": {
+    "name": {
+      "name": "affaan-m",
+      "url": "https://github.com/affaan-m"
+    },
+    "url": "https://github.com/[object Object]"
+  },
+  "source": {
+    "repo": "affaan-m/everything-claude-code",
+    "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/pytorch-patterns"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "everything-claude-code",
+    "skill",
+    "ai-ml",
+    "development"
+  ],
+  "license": "",
+  "rating": 5,
+  "score": 45
+}

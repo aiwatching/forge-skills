@@ -1,0 +1,28 @@
+{
+  "name": "configure-ecc",
+  "type": "skill",
+  "display_name": "Configure Ecc",
+  "description": "name: configure-ecc",
+  "author": {
+    "name": {
+      "name": "affaan-m",
+      "url": "https://github.com/affaan-m"
+    },
+    "url": "https://github.com/[object Object]"
+  },
+  "source": {
+    "repo": "affaan-m/everything-claude-code",
+    "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/configure-ecc"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "everything-claude-code",
+    "skill",
+    "workflow",
+    "productivity",
+    "development"
+  ],
+  "license": "",
+  "rating": 5,
+  "score": 45
+}

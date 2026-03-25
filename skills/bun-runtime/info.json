@@ -1,0 +1,28 @@
+{
+  "name": "bun-runtime",
+  "type": "skill",
+  "display_name": "Bun Runtime",
+  "description": "name: bun-runtime",
+  "author": {
+    "name": {
+      "name": "affaan-m",
+      "url": "https://github.com/affaan-m"
+    },
+    "url": "https://github.com/[object Object]"
+  },
+  "source": {
+    "repo": "affaan-m/everything-claude-code",
+    "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/bun-runtime"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "everything-claude-code",
+    "skill",
+    "development",
+    "backend",
+    "devops"
+  ],
+  "license": "",
+  "rating": 5,
+  "score": 45
+}

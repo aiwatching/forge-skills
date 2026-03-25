@@ -1,0 +1,27 @@
+{
+  "name": "java-coding-standards",
+  "type": "skill",
+  "display_name": "Java Coding Standards",
+  "description": "name: java-coding-standards",
+  "author": {
+    "name": {
+      "name": "affaan-m",
+      "url": "https://github.com/affaan-m"
+    },
+    "url": "https://github.com/[object Object]"
+  },
+  "source": {
+    "repo": "affaan-m/everything-claude-code",
+    "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/java-coding-standards"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "everything-claude-code",
+    "skill",
+    "development",
+    "backend"
+  ],
+  "license": "",
+  "rating": 5,
+  "score": 45
+}

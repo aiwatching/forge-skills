@@ -1,0 +1,28 @@
+{
+  "name": "android-clean-architecture",
+  "type": "skill",
+  "display_name": "Android Clean Architecture",
+  "description": "name: android-clean-architecture",
+  "author": {
+    "name": {
+      "name": "affaan-m",
+      "url": "https://github.com/affaan-m"
+    },
+    "url": "https://github.com/[object Object]"
+  },
+  "source": {
+    "repo": "affaan-m/everything-claude-code",
+    "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/android-clean-architecture"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "everything-claude-code",
+    "skill",
+    "mobile",
+    "architecture",
+    "development"
+  ],
+  "license": "",
+  "rating": 5,
+  "score": 45
+}

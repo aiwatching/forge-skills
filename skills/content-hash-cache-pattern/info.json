@@ -1,0 +1,28 @@
+{
+  "name": "content-hash-cache-pattern",
+  "type": "skill",
+  "display_name": "Content Hash Cache Pattern",
+  "description": "name: content-hash-cache-pattern",
+  "author": {
+    "name": {
+      "name": "affaan-m",
+      "url": "https://github.com/affaan-m"
+    },
+    "url": "https://github.com/[object Object]"
+  },
+  "source": {
+    "repo": "affaan-m/everything-claude-code",
+    "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/content-hash-cache-pattern"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "everything-claude-code",
+    "skill",
+    "performance",
+    "backend",
+    "development"
+  ],
+  "license": "",
+  "rating": 5,
+  "score": 45
+}

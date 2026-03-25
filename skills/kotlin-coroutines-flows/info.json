@@ -1,0 +1,27 @@
+{
+  "name": "kotlin-coroutines-flows",
+  "type": "skill",
+  "display_name": "Kotlin Coroutines Flows",
+  "description": "name: kotlin-coroutines-flows",
+  "author": {
+    "name": {
+      "name": "affaan-m",
+      "url": "https://github.com/affaan-m"
+    },
+    "url": "https://github.com/[object Object]"
+  },
+  "source": {
+    "repo": "affaan-m/everything-claude-code",
+    "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/kotlin-coroutines-flows"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "everything-claude-code",
+    "skill",
+    "mobile",
+    "development"
+  ],
+  "license": "",
+  "rating": 5,
+  "score": 45
+}

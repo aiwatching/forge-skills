@@ -1,0 +1,28 @@
+{
+  "name": "claude-api",
+  "type": "skill",
+  "display_name": "Claude Api",
+  "description": "name: claude-api",
+  "author": {
+    "name": {
+      "name": "affaan-m",
+      "url": "https://github.com/affaan-m"
+    },
+    "url": "https://github.com/[object Object]"
+  },
+  "source": {
+    "repo": "affaan-m/everything-claude-code",
+    "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/claude-api"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "everything-claude-code",
+    "skill",
+    "ai-ml",
+    "api",
+    "development"
+  ],
+  "license": "",
+  "rating": 5,
+  "score": 45
+}

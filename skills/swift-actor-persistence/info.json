@@ -1,0 +1,27 @@
+{
+  "name": "swift-actor-persistence",
+  "type": "skill",
+  "display_name": "Swift Actor Persistence",
+  "description": "name: swift-actor-persistence",
+  "author": {
+    "name": {
+      "name": "affaan-m",
+      "url": "https://github.com/affaan-m"
+    },
+    "url": "https://github.com/[object Object]"
+  },
+  "source": {
+    "repo": "affaan-m/everything-claude-code",
+    "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/swift-actor-persistence"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "everything-claude-code",
+    "skill",
+    "mobile",
+    "development"
+  ],
+  "license": "",
+  "rating": 5,
+  "score": 45
+}

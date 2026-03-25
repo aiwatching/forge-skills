@@ -1,0 +1,27 @@
+{
+  "name": "nanoclaw-repl",
+  "type": "skill",
+  "display_name": "Nanoclaw Repl",
+  "description": "name: nanoclaw-repl",
+  "author": {
+    "name": {
+      "name": "affaan-m",
+      "url": "https://github.com/affaan-m"
+    },
+    "url": "https://github.com/[object Object]"
+  },
+  "source": {
+    "repo": "affaan-m/everything-claude-code",
+    "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/nanoclaw-repl"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "everything-claude-code",
+    "skill",
+    "development",
+    "workflow"
+  ],
+  "license": "",
+  "rating": 5,
+  "score": 40
+}

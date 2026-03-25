@@ -1,0 +1,25 @@
+{
+  "name": "multi-workflow",
+  "type": "command",
+  "display_name": "Multi Workflow",
+  "description": "Multi-model collaborative development workflow (Research → Ideation → Plan → Execute → Optimize → Review), with intelligent routing: Frontend → Gemini, Backend → Codex.",
+  "author": {
+    "name": {
+      "name": "affaan-m",
+      "url": "https://github.com/affaan-m"
+    },
+    "url": "https://github.com/[object Object]"
+  },
+  "source": {
+    "repo": "affaan-m/everything-claude-code",
+    "url": "https://github.com/affaan-m/everything-claude-code/blob/main/commands/multi-workflow.md"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "everything-claude-code",
+    "command"
+  ],
+  "license": "",
+  "rating": 5,
+  "score": 45
+}

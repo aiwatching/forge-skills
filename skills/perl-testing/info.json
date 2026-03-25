@@ -1,0 +1,27 @@
+{
+  "name": "perl-testing",
+  "type": "skill",
+  "display_name": "Perl Testing",
+  "description": "name: perl-testing",
+  "author": {
+    "name": {
+      "name": "affaan-m",
+      "url": "https://github.com/affaan-m"
+    },
+    "url": "https://github.com/[object Object]"
+  },
+  "source": {
+    "repo": "affaan-m/everything-claude-code",
+    "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/perl-testing"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "everything-claude-code",
+    "skill",
+    "testing",
+    "development"
+  ],
+  "license": "",
+  "rating": 5,
+  "score": 45
+}
