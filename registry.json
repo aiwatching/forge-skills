@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-03-24T02:02:26.268Z",
-  "total": 32,
+  "updated_at": "2026-03-25T15:21:32.512Z",
+  "total": 33,
   "skills": [
     {
       "name": "frontend-slides",
@@ -513,6 +513,31 @@
       ],
       "license": "",
       "rating": 3,
+      "score": 45
+    },
+    {
+      "name": "python-review",
+      "type": "command",
+      "display_name": "Python Review",
+      "description": "description: Comprehensive Python code review for PEP 8 compliance, type hints, security, and Pythonic idioms. Invokes the python-reviewer agent.",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/blob/main/commands/python-review.md"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "command"
+      ],
+      "license": "",
+      "rating": 4,
       "score": 45
     },
     {
