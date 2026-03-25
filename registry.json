@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-03-25T15:21:32.512Z",
-  "total": 33,
+  "updated_at": "2026-03-25T17:12:34.953Z",
+  "total": 34,
   "skills": [
     {
       "name": "frontend-slides",
@@ -203,6 +203,31 @@
       ],
       "license": "",
       "rating": 0,
+      "score": 45
+    },
+    {
+      "name": "e2e-testing",
+      "type": "skill",
+      "display_name": "E2e Testing",
+      "description": "name: e2e-testing",
+      "author": {
+        "name": {
+          "name": "affaan-m",
+          "url": "https://github.com/affaan-m"
+        },
+        "url": "https://github.com/[object Object]"
+      },
+      "source": {
+        "repo": "affaan-m/everything-claude-code",
+        "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/e2e-testing"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "everything-claude-code",
+        "skill"
+      ],
+      "license": "",
+      "rating": 3,
       "score": 45
     },
     {
