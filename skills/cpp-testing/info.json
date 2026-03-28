@@ -4,17 +4,14 @@
   "display_name": "Cpp Testing",
   "description": "name: cpp-testing",
   "author": {
-    "name": {
-      "name": "affaan-m",
-      "url": "https://github.com/affaan-m"
-    },
-    "url": "https://github.com/[object Object]"
+    "name": "affaan-m",
+    "url": "https://github.com/affaan-m"
   },
   "source": {
     "repo": "affaan-m/everything-claude-code",
     "url": "https://github.com/affaan-m/everything-claude-code/tree/main/skills/cpp-testing"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "tags": [
     "everything-claude-code",
     "skill",

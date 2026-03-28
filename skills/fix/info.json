@@ -4,17 +4,14 @@
   "display_name": "Fix",
   "description": "name: \"fix\"",
   "author": {
-    "name": {
-      "name": "alirezarezvani",
-      "url": "https://github.com/alirezarezvani"
-    },
-    "url": "https://github.com/[object Object]"
+    "name": "alirezarezvani",
+    "url": "https://github.com/alirezarezvani"
   },
   "source": {
     "repo": "alirezarezvani/claude-skills",
     "url": "https://github.com/alirezarezvani/claude-skills/tree/main/.gemini/skills/fix"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "tags": [
     "alirezarezvani-claude-skills",
     "skill"

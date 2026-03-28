@@ -4,17 +4,14 @@
   "display_name": "Python Review",
   "description": "description: Comprehensive Python code review for PEP 8 compliance, type hints, security, and Pythonic idioms. Invokes the python-reviewer agent.",
   "author": {
-    "name": {
-      "name": "affaan-m",
-      "url": "https://github.com/affaan-m"
-    },
-    "url": "https://github.com/[object Object]"
+    "name": "affaan-m",
+    "url": "https://github.com/affaan-m"
   },
   "source": {
     "repo": "affaan-m/everything-claude-code",
     "url": "https://github.com/affaan-m/everything-claude-code/blob/main/commands/python-review.md"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "tags": [
     "everything-claude-code",
     "command"
