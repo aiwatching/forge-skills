@@ -29,6 +29,28 @@
       "type": "youtube_channel",
       "url": "https://www.youtube.com/@DataDrivenNYC/videos",
       "channelHandle": "DataDrivenNYC"
+    },
+    {
+      "name": "AI & I by Every",
+      "type": "youtube_playlist",
+      "url": "https://www.youtube.com/playlist?list=PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL",
+      "playlistId": "PLuMcoKK9mKgHtW_o9h5sGO2vXrffKHwJL"
+    }
+  ],
+  "blogs": [
+    {
+      "name": "Anthropic Engineering",
+      "type": "scrape",
+      "indexUrl": "https://www.anthropic.com/engineering",
+      "articleBaseUrl": "https://www.anthropic.com/engineering/",
+      "fetchMethod": "http"
+    },
+    {
+      "name": "Claude Blog",
+      "type": "scrape",
+      "indexUrl": "https://claude.com/blog",
+      "articleBaseUrl": "https://claude.com/blog/",
+      "fetchMethod": "http"
     }
   ],
   "x_accounts": [

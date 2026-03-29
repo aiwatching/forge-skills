@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "updated_at": "2026-03-29T03:19:27.662Z",
+  "updated_at": "2026-03-29T03:20:46.509Z",
   "total": 66,
   "skills": [
     {
@@ -57,7 +57,7 @@
         "repo": "zarazhangrui/follow-builders",
         "url": "https://github.com/zarazhangrui/follow-builders/tree/main"
       },
-      "version": "0.1.0",
+      "version": "0.1.1",
       "tags": [
         "follow-builders",
         "skill",
