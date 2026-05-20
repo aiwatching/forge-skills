@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "updated_at": "2026-03-29T03:20:46.509Z",
-  "total": 66,
+  "updated_at": "2026-05-20T00:00:00.000Z",
+  "total": 67,
   "skills": [
     {
       "name": "frontend-slides",
@@ -1189,6 +1189,32 @@
       "license": "MIT",
       "rating": 1,
       "score": 35
+    },
+    {
+      "name": "prelude",
+      "type": "skill",
+      "display_name": "Prelude",
+      "description": "Look up pre-generated architectural context about this codebase. Invoke this skill whenever the user (1) pastes a diff or asks you to review code, (2) asks what a change could break or which modules a change affects, (3) asks how a module/service/entity works or relates to others, (4) asks about business flows, revisions, installs, or cross-module interactions, (5) asks a question containing specific class/service/entity names from this repo, or (6) is about to write code that modifies an existing module. The skill provides cross-module dependencies, reverse references, and business flows that are not obvious from grepping source.",
+      "author": {
+        "name": "Ning Li",
+        "url": "https://github.com/aiwatching"
+      },
+      "source": {
+        "repo": "aiwatching/forge-skills",
+        "url": "https://github.com/aiwatching/forge-skills/tree/main/skills/prelude"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "prelude",
+        "skill",
+        "context",
+        "architecture",
+        "wiki",
+        "code-review"
+      ],
+      "license": "",
+      "rating": 5,
+      "score": 0
     }
   ],
   "commands": [
