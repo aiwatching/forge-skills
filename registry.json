@@ -1,8 +1,32 @@
 {
   "version": 2,
-  "updated_at": "2026-05-20T00:00:00.000Z",
-  "total": 67,
+  "updated_at": "2026-05-26T23:28:40Z",
+  "total": 53,
   "skills": [
+    {
+      "name": "ai-orchestration",
+      "type": "skill",
+      "display_name": "AI Orchestration",
+      "description": "Discover and call Forge connector tools (Mantis, GitLab, Teams, Jira, \u2026) from inside a Claude session. Required for V3 prompt-mode schedules; useful for any task that needs to reach external systems.",
+      "author": {
+        "name": "forge",
+        "url": "https://github.com/aiwatching/forge-skills"
+      },
+      "source": {
+        "repo": "aiwatching/forge-skills",
+        "url": "https://github.com/aiwatching/forge-skills/tree/main/skills/ai-orchestration"
+      },
+      "version": "0.1.0",
+      "tags": [
+        "forge",
+        "core",
+        "orchestration",
+        "connectors"
+      ],
+      "license": "MIT",
+      "rating": 0,
+      "score": 0
+    },
     {
       "name": "frontend-slides",
       "type": "skill",
@@ -215,7 +239,7 @@
       "name": "codex",
       "type": "skill",
       "display_name": "codex",
-      "description": "| OpenAI Codex CLI wrapper — three modes. Code review: independent diff review via codex review with pass/fail gate. Challenge: adversarial mode that tries to break your code. Consult: ask codex anything with session continuity for follow-ups. The \"200 IQ autistic developer\" second opinion. Use when asked to \"codex review\", \"codex challenge\", \"ask codex\", \"second opinion\", or \"consult codex\".",
+      "description": "| OpenAI Codex CLI wrapper \u2014 three modes. Code review: independent diff review via codex review with pass/fail gate. Challenge: adversarial mode that tries to break your code. Consult: ask codex anything with session continuity for follow-ups. The \"200 IQ autistic developer\" second opinion. Use when asked to \"codex review\", \"codex challenge\", \"ask codex\", \"second opinion\", or \"consult codex\".",
       "author": {
         "name": "garrytan",
         "url": "https://github.com/garrytan"
@@ -407,7 +431,7 @@
       "name": "design-review",
       "type": "skill",
       "display_name": "design-review",
-      "description": "| Designer's eye QA: finds visual inconsistency, spacing issues, hierarchy problems, AI slop patterns, and slow interactions — then fixes them. Iteratively fixes issues in source code, committing each fix atomically and re-verifying with before/after screenshots. For plan-mode design review (before implementation), use /plan-design-review. Use when asked to \"audit the design\", \"visual QA\", \"check if it looks good\", or \"design polish\". Proactively suggest when the user mentions visual inconsistencies or wants to polish the look of a live site.",
+      "description": "| Designer's eye QA: finds visual inconsistency, spacing issues, hierarchy problems, AI slop patterns, and slow interactions \u2014 then fixes them. Iteratively fixes issues in source code, committing each fix atomically and re-verifying with before/after screenshots. For plan-mode design review (before implementation), use /plan-design-review. Use when asked to \"audit the design\", \"visual QA\", \"check if it looks good\", or \"design polish\". Proactively suggest when the user mentions visual inconsistencies or wants to polish the look of a live site.",
       "author": {
         "name": "garrytan",
         "url": "https://github.com/garrytan"
@@ -690,7 +714,7 @@
       "name": "plan-design-review",
       "type": "skill",
       "display_name": "plan-design-review",
-      "description": "| Designer's eye plan review — interactive, like CEO and Eng review. Rates each design dimension 0-10, explains what would make it a 10, then fixes the plan to get there. Works in plan mode. For live site visual audits, use /design-review. Use when asked to \"review the design plan\" or \"design critique\". Proactively suggest when the user has a plan with UI/UX components that should be reviewed before implementation.",
+      "description": "| Designer's eye plan review \u2014 interactive, like CEO and Eng review. Rates each design dimension 0-10, explains what would make it a 10, then fixes the plan to get there. Works in plan mode. For live site visual audits, use /design-review. Use when asked to \"review the design plan\" or \"design critique\". Proactively suggest when the user has a plan with UI/UX components that should be reviewed before implementation.",
       "author": {
         "name": "garrytan",
         "url": "https://github.com/garrytan"
@@ -712,7 +736,7 @@
       "name": "plan-eng-review",
       "type": "skill",
       "display_name": "plan-eng-review",
-      "description": "| Eng manager-mode plan review. Lock in the execution plan — architecture, data flow, diagrams, edge cases, test coverage, performance. Walks through issues interactively with opinionated recommendations. Use when asked to \"review the architecture\", \"engineering review\", or \"lock in the plan\". Proactively suggest when the user has a plan or design doc and is about to start coding — to catch architecture issues before implementation.",
+      "description": "| Eng manager-mode plan review. Lock in the execution plan \u2014 architecture, data flow, diagrams, edge cases, test coverage, performance. Walks through issues interactively with opinionated recommendations. Use when asked to \"review the architecture\", \"engineering review\", or \"lock in the plan\". Proactively suggest when the user has a plan or design doc and is about to start coding \u2014 to catch architecture issues before implementation.",
       "author": {
         "name": "garrytan",
         "url": "https://github.com/garrytan"
@@ -1267,7 +1291,7 @@
       "name": "multi-workflow",
       "type": "command",
       "display_name": "Multi Workflow",
-      "description": "Multi-model collaborative development workflow (Research → Ideation → Plan → Execute → Optimize → Review), with intelligent routing: Frontend → Gemini, Backend → Codex.",
+      "description": "Multi-model collaborative development workflow (Research \u2192 Ideation \u2192 Plan \u2192 Execute \u2192 Optimize \u2192 Review), with intelligent routing: Frontend \u2192 Gemini, Backend \u2192 Codex.",
       "author": {
         "name": "affaan-m",
         "url": "https://github.com/affaan-m"
@@ -1448,7 +1472,7 @@
       "name": "example-commit",
       "type": "command",
       "display_name": "Example: Smart Commit",
-      "description": "示例 command — 根据 staged changes 自动生成规范的 commit message。这是一个占位示例，展示 info.json 的字段结构。",
+      "description": "\u793a\u4f8b command \u2014 \u6839\u636e staged changes \u81ea\u52a8\u751f\u6210\u89c4\u8303\u7684 commit message\u3002\u8fd9\u662f\u4e00\u4e2a\u5360\u4f4d\u793a\u4f8b\uff0c\u5c55\u793a info.json \u7684\u5b57\u6bb5\u7ed3\u6784\u3002",
       "author": {
         "name": "aiwatching",
         "url": "https://github.com/aiwatching"
@@ -1471,7 +1495,7 @@
       "name": "explain",
       "type": "command",
       "display_name": "Explain Code",
-      "description": "解释指定文件或函数的代码逻辑，用简洁的语言描述它做了什么、为什么这样做",
+      "description": "\u89e3\u91ca\u6307\u5b9a\u6587\u4ef6\u6216\u51fd\u6570\u7684\u4ee3\u7801\u903b\u8f91\uff0c\u7528\u7b80\u6d01\u7684\u8bed\u8a00\u63cf\u8ff0\u5b83\u505a\u4e86\u4ec0\u4e48\u3001\u4e3a\u4ec0\u4e48\u8fd9\u6837\u505a",
       "author": {
         "name": "aiwatching",
         "url": "https://github.com/aiwatching"
@@ -1493,7 +1517,7 @@
       "name": "refactor",
       "type": "command",
       "display_name": "Refactor",
-      "description": "分析指定代码并提出重构建议，减少重复、提高可读性和可维护性",
+      "description": "\u5206\u6790\u6307\u5b9a\u4ee3\u7801\u5e76\u63d0\u51fa\u91cd\u6784\u5efa\u8bae\uff0c\u51cf\u5c11\u91cd\u590d\u3001\u63d0\u9ad8\u53ef\u8bfb\u6027\u548c\u53ef\u7ef4\u62a4\u6027",
       "author": {
         "name": "aiwatching",
         "url": "https://github.com/aiwatching"
@@ -1538,7 +1562,7 @@
       "name": "test-gen",
       "type": "command",
       "display_name": "Generate Tests",
-      "description": "为指定函数或模块生成单元测试，覆盖正常路径、边界情况和错误处理",
+      "description": "\u4e3a\u6307\u5b9a\u51fd\u6570\u6216\u6a21\u5757\u751f\u6210\u5355\u5143\u6d4b\u8bd5\uff0c\u8986\u76d6\u6b63\u5e38\u8def\u5f84\u3001\u8fb9\u754c\u60c5\u51b5\u548c\u9519\u8bef\u5904\u7406",
       "author": {
         "name": "aiwatching",
         "url": "https://github.com/aiwatching"

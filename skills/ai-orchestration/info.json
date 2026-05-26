@@ -1,0 +1,24 @@
+{
+  "name": "ai-orchestration",
+  "type": "skill",
+  "display_name": "AI Orchestration",
+  "description": "Discover and call Forge connector tools (Mantis, GitLab, Teams, Jira, …) from inside a Claude session. Required for V3 prompt-mode schedules; useful for any task that needs to reach external systems.",
+  "author": {
+    "name": "forge",
+    "url": "https://github.com/aiwatching/forge-skills"
+  },
+  "source": {
+    "repo": "aiwatching/forge-skills",
+    "url": "https://github.com/aiwatching/forge-skills/tree/main/skills/ai-orchestration"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "forge",
+    "core",
+    "orchestration",
+    "connectors"
+  ],
+  "license": "MIT",
+  "rating": 0,
+  "score": 0
+}
