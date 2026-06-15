@@ -14,18 +14,8 @@ Pre-generated architectural context lives alongside this skill at `pages/`. It i
 Invoke `sync.sh` using the **absolute path** of the skill directory — the same directory where this `SKILL.md` lives (which you already resolved when loading this file). Example (substitute the real absolute path you loaded):
 
 ```bash
-# Normal case — auto-detect which wiki matches the surrounding repo:
 bash /abs/path/to/.claude/skills/prelude/scripts/sync.sh
-
-# When the USER names a repository (and optionally a branch) in their request,
-# pass them explicitly — arguments take priority over auto-detection:
-bash /abs/path/to/.claude/skills/prelude/scripts/sync.sh FortiNAC 7.6
 ```
-
-This is a UNIVERSAL skill: it is not pinned to one wiki. It resolves the right
-wiki in this order: explicit arguments → config/env → git auto-detection of the
-surrounding repository. If none of those identify a wiki, it exits with code 2
-(see below) and you must ask the user.
 
 Do not use `$CLAUDE_PROJECT_DIR` or `git rev-parse` to build the path — in this repo the skill directory can sit inside a sub-checkout whose outer git root is a different directory, and those forms produce the wrong path.
 
@@ -34,7 +24,6 @@ The sync script is pull-only and idempotent — it compares the local manifest t
 - **Exit 0, no warning** — local cache is up-to-date or was just refreshed; proceed normally.
 - **Exit 0, with a `WARN:` line** — upstream was unreachable but a previous cache exists under `pages/`. The context may be stale, but it is still the best pre-generated answer source — **use it**. Note the staleness in your answer if the user is asking about very recent changes.
 - **Exit 1** — no usable cache at all (fresh clone + source unavailable). Skip to step 4 (fallback to pure source-code analysis). Mention to the user that the Prelude context isn't available here.
-- **Exit 2 — `NEED_INPUT`** — the script could not determine (or could not find) which wiki to use. **STOP and ASK THE USER.** The script prints the list of wikis available on the server — present those options to the user verbatim, ask which repo + branch they want (or whether to proceed without Prelude context), then re-run sync with BOTH as arguments: `sync.sh <repo> <branch>`. Never guess, never silently proceed with a cached wiki for a different repo/branch, and never treat this as a hard failure without asking first. This also covers the branch-mismatch case (e.g. the user is on a feature branch and the wiki exists only for `7.6`) — selecting the nearest wiki is the USER's decision, not yours.
 
 Always proceed to step 2 as long as `pages/index.md` exists, even if sync printed a warning.
 
